@@ -51,17 +51,19 @@ view: acs_census {
   dimension: armed_forces {
     type: number
     sql: ${TABLE}.armed_forces ;;
+    description: "Population in Armed Forces. The number of people in each geography who are members of the U.S. Armed Forces (people on active duty with the United States Army, Air Force, Navy, Marine Corps, or Coast Guard)."
   }
 
   dimension: do_date {
     type: string
     sql: ${TABLE}.do_date ;;
+    description: "None"
   }
-
 
   dimension: total_pop {
     type: number
     sql: ${TABLE}.total_pop ;;
+    description: "Total Population. The total number of all people living in a given geographic area.  This is a very useful catch-all denominator when calculating rates."
   }
 
   measure: count {
