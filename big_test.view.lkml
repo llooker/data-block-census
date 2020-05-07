@@ -16,6 +16,7 @@ view: big_test {
         `bigquery-public-data.census_bureau_acs.blockgroup_2017_5yr` as base ON county.geo_id = (SUBSTR(CAST(base.geo_id as STRING), 0, 5))
 
     ;;
+    persist_for: "10000 hours"
   }
 
   dimension: state {
