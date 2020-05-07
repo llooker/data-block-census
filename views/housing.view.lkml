@@ -240,5 +240,4 @@ view: housing {
     sql: ${TABLE}.percent_income_spent_on_rent ;;
     description: "Percent of Household Income Spent on Rent. Within a geographic area, the median percentage of household income which was spent on gross rent.  Gross rent is the amount of the contract rent plus the estimated average monthly cost of utilities (electricity, gas, water, sewer etc.) and fuels (oil, coal, wood, etc.) if these are paid by the renter.  Household income is the sum of the income of all people 15 years and older living in the household."
   }
-
 }
