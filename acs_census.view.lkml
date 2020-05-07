@@ -1,5 +1,5 @@
 include: "/views/*.view"
-include: "maps.lkml"
+
 
 view: acs_census {
   extends: [gender, housing, race, education, employment, age, commute, family]
@@ -41,6 +41,13 @@ view: acs_census {
     allowed_value: {label: "5 Year" value: "5yr"}
   }
 
+  dimension: geo_id {
+    primary_key: yes
+    type: string
+    sql: ${TABLE}.geo_id ;;
+    map_layer_name: us_zipcode_tabulation_areas
+  }
+
   dimension: armed_forces {
     type: number
     sql: ${TABLE}.armed_forces ;;
@@ -51,11 +58,6 @@ view: acs_census {
     sql: ${TABLE}.do_date ;;
   }
 
-  dimension: geo_id {
-    primary_key: yes
-    type: string
-    sql: ${TABLE}.geo_id ;;
-  }
 
   dimension: total_pop {
     type: number

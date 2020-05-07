@@ -1,7 +1,6 @@
 view: housing {
   extension: required
 
-
   dimension: occupied_housing_units {
     type: number
     sql: ${TABLE}.occupied_housing_units ;;
@@ -209,6 +208,4 @@ view: housing {
     sql: ${TABLE}.owner_occupied_housing_units_lower_value_quartile ;;
   }
 
-
-
-  }
+}
