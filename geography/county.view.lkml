@@ -1,3 +1,5 @@
+include: "/views/*"
+
 view: county {
   derived_table: {
    sql:
@@ -20,7 +22,6 @@ view: county {
   }
 
 
-  #THIS FIELD NEEDS REVISION
   dimension: county_name {
     sql: ${TABLE}.county_name ;;
     view_label: "Geography"
