@@ -29,6 +29,13 @@ view: population {
     hidden: yes
   }
 
+  dimension: armed_forces_dim {
+    type: number
+    sql: ${TABLE}.armed_forces ;;
+    description: "Population in Armed Forces. The number of people in each geography who are members of the U.S. Armed Forces (people on active duty with the United States Army, Air Force, Navy, Marine Corps, or Coast Guard)."
+    hidden: yes
+  }
+
   measure: median_age {
     type: sum
     sql: ${median_age_dim} ;;
@@ -48,6 +55,13 @@ view: population {
     sql: ${pop_25_years_over_dim} ;;
     view_label: "Population"
     description: "Population 25 Years and Over. The number of people in a geographic area who are over the age of 25.  This is used mostly as a denominator of educational attainment."
+  }
+
+  measure: armed_forces {
+    type: sum
+    sql: ${armed_forces_dim} ;;
+    view_label: "Population"
+    description: "Population in Armed Forces. The number of people in each geography who are members of the U.S. Armed Forces (people on active duty with the United States Army, Air Force, Navy, Marine Corps, or Coast Guard)."
   }
 
 
