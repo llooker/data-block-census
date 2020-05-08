@@ -1,6 +1,7 @@
 include: "/views/*"
 
 view: big_test {
+  label: "ACS Big PDT"
   extends: [gender, housing, race, education, employment, age, commute, family]
   derived_table: {
     sql:

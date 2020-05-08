@@ -2,6 +2,7 @@ include: "/views/*.view"
 
 
 view: acs_census {
+  label: "ACS Dynamic"
   extends: [gender, housing, race, education, employment, age, commute, family]
   sql_table_name: bigquery-public-data.census_bureau_acs.{{geography._parameter_value}}_{{year._parameter_value}}_{{period._parameter_value}} ;;
 

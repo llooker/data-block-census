@@ -17,12 +17,13 @@ explore: acs_census {
 
 
 explore: state {
+  label: "ACS Census Data"
   join: county {
-    sql_on: CAST(${state.state_geo_id} as STRING) = (SUBSTR(CAST(${county.county_fips} as STRING),0, 2)) ;;
+    sql_on:  ${state.county_key} = ${county.state_key};;
     relationship: one_to_many
   }
   join: blockgroup  {
-    sql_on: ${county.county_fips} = (SUBSTR(CAST(${blockgroup.block_group} as STRING), 0, 5)) ;;
+    sql_on: ${county.blockgroup_key} = ${blockgroup.county_key} ;;
     relationship: one_to_many
   }
 }
