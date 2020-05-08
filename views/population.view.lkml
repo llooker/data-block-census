@@ -1,4 +1,4 @@
-view: age {
+view: population {
   extension: required
 
   dimension: median_age_dim {
@@ -22,24 +22,38 @@ view: age {
     hidden: yes
   }
 
+  dimension: total_pop_dim {
+    type: number
+    sql: ${TABLE}.total_pop ;;
+    description: "Total Population. The total number of all people living in a given geographic area.  This is a very useful catch-all denominator when calculating rates."
+    hidden: yes
+  }
+
   measure: median_age {
     type: sum
     sql: ${median_age_dim} ;;
-    view_label: "Age"
+    view_label: "Population"
     description: "Median Age. The median age of all people in a given geographic area."
   }
 
   measure: pop_16_over {
     type: sum
     sql: ${pop_16_over_dim} ;;
-    view_label: "Age"
+    view_label: "Population"
     description: "Population age 16 and over. The number of people in each geography who are age 16 or over."
   }
 
   measure: pop_25_years_over {
     type: sum
     sql: ${pop_25_years_over_dim} ;;
-    view_label: "Age"
+    view_label: "Population"
     description: "Population 25 Years and Over. The number of people in a geographic area who are over the age of 25.  This is used mostly as a denominator of educational attainment."
+  }
+
+
+  measure: total_pop {
+    type: sum
+    sql: ${TABLE}.total_pop ;;
+    description: "Total Population. The total number of all people living in a given geographic area.  This is a very useful catch-all denominator when calculating rates."
   }
 }

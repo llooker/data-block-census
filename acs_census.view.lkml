@@ -3,7 +3,7 @@ include: "/views/*.view"
 
 view: acs_census {
   label: "ACS Dynamic"
-  extends: [gender, housing, race, education, employment, age, commute, family]
+  extends: [gender, housing, race, education, employment, population, commute, family]
   sql_table_name: bigquery-public-data.census_bureau_acs.{{geography._parameter_value}}_{{year._parameter_value}}_{{period._parameter_value}} ;;
 
   parameter: geography {
@@ -59,12 +59,6 @@ view: acs_census {
     type: string
     sql: ${TABLE}.do_date ;;
     description: "None"
-  }
-
-  dimension: total_pop {
-    type: number
-    sql: ${TABLE}.total_pop ;;
-    description: "Total Population. The total number of all people living in a given geographic area.  This is a very useful catch-all denominator when calculating rates."
   }
 
   measure: count {

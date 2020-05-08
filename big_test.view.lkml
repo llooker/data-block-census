@@ -2,7 +2,7 @@ include: "/views/*"
 
 view: big_test {
   label: "ACS Big PDT"
-  extends: [gender, housing, race, education, employment, age, commute, family]
+  extends: [gender, housing, race, education, employment, population, commute, family]
   derived_table: {
     sql:
     SELECT
