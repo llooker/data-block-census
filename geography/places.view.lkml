@@ -22,6 +22,8 @@ view: places {
     primary_key: yes
     view_label: "Geography"
     group_label: "Place"
+
+    #map_layer_name: FEED ME
   }
 
   dimension: state_key {
@@ -103,5 +105,9 @@ view: places {
     group_label: "Places"
     value_format_name: usd
   }
-
 }
+
+
+#map_layer: acs_census_places {
+  #FEED ME
+#}
