@@ -4,6 +4,7 @@ view: state {
     SELECT
       state.*,
       state_name.state_name as state,
+      state_name.state_postal_abbreviation as state_abbreviation,
       CAST(state.geo_id as STRING) as county_key
     FROM
     `bigquery-public-data.census_bureau_acs.state_2018_5yr` as state
@@ -17,6 +18,14 @@ view: state {
     primary_key: yes
     sql: ${TABLE}.state ;;
     view_label: "Geography"
+    group_label: "State"
+    map_layer_name: us_states
+  }
+
+  dimension: state_abbreviation {
+    sql: ${TABLE}.state_abbreviation ;;
+    view_label: "Geography"
+    group_label: "State"
     map_layer_name: us_states
   }
 
