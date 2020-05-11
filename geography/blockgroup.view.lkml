@@ -21,7 +21,72 @@ view: blockgroup {
 
   dimension: census_tract_key {
     sql: (SUBSTR(CAST(${block_group} as STRING), 0, 11)) ;;
+    hidden: yes
 
+  }
+
+  dimension: block_group_median_income_dim {
+    sql: ${TABLE}.median_income ;;
+    view_label: "Medians"
+    group_label: "Block Group"
+    value_format_name: usd
+    hidden: yes
+  }
+
+  dimension: block_group_median_rent_dim {
+    sql: ${TABLE}.median_rent ;;
+    view_label: "Medians"
+    group_label: "Block Group"
+    value_format_name: usd
+    hidden: yes
+  }
+
+  dimension: block_group_median_year_structure_built_dim {
+    sql: ${TABLE}.median_year_structure_built ;;
+    view_label: "Medians"
+    group_label: "Block Group"
+    value_format_name: decimal_0
+    hidden: yes
+  }
+
+  dimension: block_group_gross_rent_dim {
+    sql: ${TABLE}.renter_occupied_housing_units_paying_cash_median_gross_rent ;;
+    view_label: "Medians"
+    group_label: "Block Group"
+    value_format_name: usd
+    hidden: yes
+  }
+
+  measure: block_group_median_income {
+    sql: MAX(${block_group_median_income_dim}) ;;
+    type: number
+    view_label: "Medians"
+    group_label: "Block Group"
+    value_format_name: usd
+  }
+
+  measure: block_group_median_rent {
+    sql: MAX(${block_group_median_rent_dim}) ;;
+    type: number
+    view_label: "Medians"
+    group_label: "Block Group"
+    value_format_name: usd
+  }
+
+  measure: block_group_median_year_structure_built {
+    sql: MAX(${block_group_median_year_structure_built_dim}) ;;
+    type: number
+    view_label: "Medians"
+    group_label: "Block Group"
+    value_format_name: decimal_0
+  }
+
+  measure: block_group_gross_rent {
+    sql: MAX(${block_group_gross_rent_dim}) ;;
+    type: number
+    view_label: "Medians"
+    group_label: "Block Group"
+    value_format_name: usd
   }
 
 }
