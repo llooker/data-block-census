@@ -41,3 +41,13 @@ explore: congressional_district {
     relationship: many_to_one
   }
 }
+
+
+explore: zip_codes {
+  view_name: state
+  label: "Zip Codes"
+  join: zcta {
+    sql_on: ${state.county_key} = ${zcta.state_key} ;;
+    relationship: one_to_many
+  }
+}

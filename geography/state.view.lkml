@@ -11,7 +11,7 @@ view: state {
     INNER JOIN `bigquery-public-data.census_utility.fips_codes_states` as state_name ON state.geo_id = state_name.state_fips_code
     ;;
 
-    persist_for: "10000 hours"
+    persist_for: "100000 hours"
   }
 
   dimension: state_name {

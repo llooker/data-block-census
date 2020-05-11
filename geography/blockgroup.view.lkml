@@ -2,7 +2,7 @@ include: "/views/*"
 
 view: blockgroup {
   extends: [gender, housing, race, education, employment, population, commute, family]
-  sql_table_name: `bigquery-public-data.census_bureau_acs.blockgroup_2017_5yr` ;;
+  sql_table_name: `bigquery-public-data.census_bureau_acs.blockgroup_2018_5yr` ;;
 
   dimension: block_group {
     primary_key: yes
