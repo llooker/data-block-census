@@ -16,6 +16,7 @@ include: "/geography/*"
 
 
 explore: acs_census_data {
+  persist_for: "10000 hours"
   view_name: state
   label: "ACS Census Data"
   join: county {

@@ -21,6 +21,7 @@ view: blockgroup {
 
   dimension: census_tract_key {
     sql: (SUBSTR(CAST(${block_group} as STRING), 0, 11)) ;;
+    hidden: yes
 
   }
 

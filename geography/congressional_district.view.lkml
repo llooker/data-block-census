@@ -10,7 +10,7 @@ view: congressional_district {
     sql: ${TABLE}.geo_id ;;
     view_label: "Geography"
 
-    #map_layer_name: FEED ME
+    map_layer_name: congressional_districts
   }
 
   dimension: state_key {
@@ -20,6 +20,8 @@ view: congressional_district {
 
 }
 
-#map_layer: congressional_districts {
-  #FEED ME
-#}
+map_layer: congressional_districts {
+  label: "116th Congressional Districts (2019)"
+  file: "/maps/2019_us_cd116.json"
+  format: topojson
+}
