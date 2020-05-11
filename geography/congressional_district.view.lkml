@@ -22,6 +22,6 @@ view: congressional_district {
 
 map_layer: congressional_districts {
   label: "116th Congressional Districts (2019)"
-  file: "/2019_us_cd116.json"
+  file: "/maps/2019_us_cd116.json"
   format: topojson
 }
