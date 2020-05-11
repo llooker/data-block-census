@@ -43,11 +43,20 @@ explore: congressional_district {
 }
 
 
-explore: zip_codes {
-  view_name: state
+explore: zcta {
+  always_filter: {filters: {field:state.state_name value:"Please Enter a State to Filter By"} }
   label: "Zip Codes"
-  join: zcta {
+  join: state  {
     sql_on: ${state.county_key} = ${zcta.state_key} ;;
-    relationship: one_to_many
+    relationship: many_to_one
+  }
+}
+
+
+explore: places {
+  label: "Places"
+  join: state {
+    sql_on: ${places.state_key} = ${state.county_key} ;;
+    relationship: many_to_one
   }
 }
