@@ -39,4 +39,70 @@ view: county {
     hidden: yes
     sql: ${TABLE}.blockgroup_key ;;
   }
+
+  dimension: county_median_income_dim {
+    sql: ${TABLE}.median_income ;;
+    view_label: "Medians"
+    group_label: "County"
+    value_format_name: usd
+    hidden: yes
+  }
+
+  dimension: county_median_rent_dim {
+    sql: ${TABLE}.median_rent ;;
+    view_label: "Medians"
+    group_label: "County"
+    value_format_name: usd
+    hidden: yes
+  }
+
+  dimension: county_median_year_structure_built_dim {
+    sql: ${TABLE}.median_year_structure_built ;;
+    view_label: "Medians"
+    group_label: "County"
+    value_format_name: decimal_0
+    hidden: yes
+  }
+
+  dimension: county_gross_rent_dim {
+    sql: ${TABLE}.renter_occupied_housing_units_paying_cash_median_gross_rent ;;
+    view_label: "Medians"
+    group_label: "County"
+    value_format_name: usd
+    hidden: yes
+  }
+
+  measure: county_median_rent {
+    sql: MAX(${county_median_rent_dim}) ;;
+    type: number
+    view_label: "Medians"
+    group_label: "County"
+    value_format_name: usd
+  }
+
+  measure: county_median_year_structure_built {
+    sql: MAX(${county_median_year_structure_built_dim}) ;;
+    type: number
+    view_label: "Medians"
+    group_label: "County"
+    value_format_name: decimal_0
+  }
+
+  measure: county_median_income {
+    sql: MAX(${county_median_income_dim}) ;;
+    type: number
+    view_label: "Medians"
+    group_label: "County"
+    value_format_name: usd
+  }
+
+  measure: county_gross_rent {
+    sql: MAX(${county_gross_rent_dim}) ;;
+    type: number
+    view_label: "Medians"
+    group_label: "County"
+    value_format_name: usd
+  }
+
+
 }
