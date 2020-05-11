@@ -255,7 +255,6 @@ view: housing {
 
   dimension: owner_occupied_housing_units_lower_value_quartile_dim {
     type: number
-    hidden: yes
     sql: ${TABLE}.owner_occupied_housing_units_lower_value_quartile ;;
     description: "Owner-Occupied Housing Units Lower Value Quartile"
     hidden: yes
@@ -270,7 +269,6 @@ view: housing {
 
   dimension: owner_occupied_housing_units_upper_value_quartile_dim {
     type: number
-    hidden: yes
     sql: ${TABLE}.owner_occupied_housing_units_upper_value_quartile ;;
     description: "Owner-Occupied Housing Units Upper Value Quartile"
     hidden: yes
