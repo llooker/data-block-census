@@ -30,6 +30,7 @@ explore: congressional_district {
   }
 }
 
+
 explore: unified_school_districts {
   persist_for: "10000 hours"
   always_filter: {filters: {field:state.state_name value:"Please Enter a State(s) to Filter By"} }
@@ -39,7 +40,6 @@ explore: unified_school_districts {
     relationship: many_to_one
   }
 }
-
 
 
 explore: zcta {

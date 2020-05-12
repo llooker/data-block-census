@@ -10,7 +10,6 @@ view: congressional_district {
     primary_key: yes
     sql: ${TABLE}.geo_id ;;
     view_label: "Geography"
-
     map_layer_name: congressional_districts
   }
 
