@@ -12,8 +12,6 @@ view: blockgroup {
     #map_layer_name: FEED ME
   }
 
-
-
   dimension: county_key {
     type: string
     sql:(SUBSTR(CAST(${block_group} as STRING), 0, 5)) ;;

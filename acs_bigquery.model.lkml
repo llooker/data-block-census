@@ -22,6 +22,7 @@ explore: acs_census_data {
 
 explore: congressional_district {
   persist_for: "10000 hours"
+  always_filter: {filters: {field:state.state_name value:"Please Enter a State(s) to Filter By"} }
   label: "Congressional Districts"
   join: state {
     sql_on: ${congressional_district.state_key} = ${state.county_key} ;;
