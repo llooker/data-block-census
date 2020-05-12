@@ -6,7 +6,7 @@ explore: acs_census_data {
   view_name: state
   label: "ACS Census Data"
   join: county {
-    sql_on:  ${state.county_key} = ${county.state_key};;
+    sql_on:  ${state.key} = ${county.state_key};;
     relationship: one_to_many
   }
   join: census_tract {
@@ -25,13 +25,19 @@ explore: congressional_district {
   always_filter: {filters: {field:state.state_name value:"Please Enter a State(s) to Filter By"} }
   label: "Congressional Districts"
   join: state {
-    sql_on: ${congressional_district.state_key} = ${state.county_key} ;;
+    sql_on: ${congressional_district.state_key} = ${state.key} ;;
     relationship: many_to_one
   }
 }
 
 explore: unified_school_districts {
   persist_for: "10000 hours"
+  always_filter: {filters: {field:state.state_name value:"Please Enter a State(s) to Filter By"} }
+  label: "Unified School Districts"
+  join: state {
+    sql_on: ${unified_school_districts.state_key} = ${state.key} ;;
+    relationship: many_to_one
+  }
 }
 
 
@@ -41,7 +47,7 @@ explore: zcta {
   always_filter: {filters: {field:state.state_name value:"Please Enter a State(s) to Filter By"} }
   label: "Zip Codes"
   join: state  {
-    sql_on: ${state.county_key} = ${zcta.state_key} ;;
+    sql_on: ${state.key} = ${zcta.state_key} ;;
     relationship: many_to_one
   }
 }
@@ -52,7 +58,7 @@ explore: places {
   always_filter: {filters: {field:state.state_name value:"Please Enter a State(s) to Filter By"} }
   label: "Places"
   join: state {
-    sql_on: ${places.state_key} = ${state.county_key} ;;
+    sql_on: ${places.state_key} = ${state.key} ;;
     relationship: many_to_one
   }
 }

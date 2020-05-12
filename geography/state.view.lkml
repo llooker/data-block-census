@@ -5,7 +5,7 @@ view: state {
       state.*,
       state_name.state_name as state,
       state_name.state_postal_abbreviation as state_abbreviation,
-      CAST(state.geo_id as STRING) as county_key
+      CAST(state.geo_id as STRING) as key
     FROM
     `bigquery-public-data.census_bureau_acs.state_2018_5yr` as state
     INNER JOIN `bigquery-public-data.census_utility.fips_codes_states` as state_name ON state.geo_id = state_name.state_fips_code
@@ -30,9 +30,9 @@ view: state {
     map_layer_name: us_states
   }
 
-  dimension: county_key {
+  dimension: key {
     hidden: yes
-    sql: ${TABLE}.county_key ;;
+    sql: ${TABLE}.key ;;
   }
 
   dimension: state_median_income_dim {

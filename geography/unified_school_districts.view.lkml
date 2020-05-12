@@ -10,5 +10,9 @@ view: unified_school_districts {
     map_layer_name: school_districts
   }
 
+  dimension: state_key {
+    sql: SUBSTR(CAST(${TABLE}.geo_id as STRING), 0, 2) ;;
+  }
+
 
 }

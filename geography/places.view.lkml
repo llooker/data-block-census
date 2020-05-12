@@ -74,6 +74,13 @@ view: places {
     hidden: yes
   }
 
+  dimension: median_age_dim {
+    type: number
+    sql: ${TABLE}.median_age ;;
+    description: "Median Age. The median age of all people in a given geographic area."
+    hidden: yes
+  }
+
   measure: places_median_rent {
     sql: MAX(${places_median_rent_dim}) ;;
     type: number
@@ -105,6 +112,16 @@ view: places {
     group_label: "Places"
     value_format_name: usd
   }
+
+  measure: median_age {
+    type: number
+    sql: MAX(${TABLE}.median_age) ;;
+    description: "Median Age. The median age of all people in a given geographic area."
+    view_label: "Medians"
+    group_label: "Places"
+    hidden: yes
+  }
+
 }
 
 
