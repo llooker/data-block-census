@@ -1,4 +1,5 @@
 include: "/views/*"
+include: "/maps/map_layers.lkml"
 
 view: congressional_district {
   extends: [gender, education, employment, population, commute, family]
@@ -83,19 +84,4 @@ view: congressional_district {
   }
 
 
-}
-
-map_layer: congressional_districts {
-  label: "116th Congressional Districts (2019)"
-  file: "/maps/2019_us_cd116.json"
-  format: topojson
-  property_key: "GEOID"
-  property_label_key: "NAMELSAD"
-}
-map_layer: school_districts {
-  label: "116th Congressional Districts (2019)"
-  file: "/maps/2019_us_schooldistricts.json"
-  format: topojson
-  property_key: "GEOID"
-  property_label_key: "NAME"
 }

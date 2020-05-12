@@ -29,6 +29,11 @@ explore: congressional_district {
   }
 }
 
+explore: unified_school_districts {
+  persist_for: "10000 hours"
+}
+
+
 
 explore: zcta {
   persist_for: "10000 hours"
