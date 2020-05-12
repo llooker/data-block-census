@@ -22,6 +22,7 @@ view: state {
     map_layer_name: us_states
   }
 
+
   dimension: state_abbreviation {
     sql: ${TABLE}.state_abbreviation ;;
     view_label: "Geography"

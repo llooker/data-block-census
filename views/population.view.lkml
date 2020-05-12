@@ -67,7 +67,7 @@ view: population {
 
   measure: total_pop {
     type: sum
-    sql: ${TABLE}.total_pop ;;
+    sql: ${total_pop_dim} ;;
     view_label: "Population"
     description: "Total Population. The total number of all people living in a given geographic area.  This is a very useful catch-all denominator when calculating rates."
   }

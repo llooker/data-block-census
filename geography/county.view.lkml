@@ -11,7 +11,7 @@ view: county {
       county_name.area_name as county_name
     FROM
       `bigquery-public-data.census_bureau_acs.county_2018_5yr` as county
-    JOIN`bigquery-public-data.census_utility.fips_codes_all` as county_name ON CAST(county.geo_id as STRING) = CONCAT(CAST(county_name.state as STRING), CAST(county_name.county as STRING))
+    INNER JOIN`bigquery-public-data.census_utility.fips_codes_all` as county_name ON CAST(county.geo_id as STRING) = CONCAT(CAST(county_name.state as STRING), CAST(county_name.county as STRING))
     ;;
     persist_for: "100000 hours"
   }

@@ -1,19 +1,5 @@
 connection: "bigquery-public"
-include: "*.view"
 include: "/geography/*"
-
-#OLD DYNAMIC EXPLORE
-# explore: acs_census {
-#   view_name: acs_census
-#   always_filter: {
-#     filters: [
-#       geography: "blockgroup",
-#       year:   "2017",
-#       period: "5yr"
-#     ]
-#   }
-# }
-
 
 explore: acs_census_data {
   persist_for: "10000 hours"
@@ -35,6 +21,7 @@ explore: acs_census_data {
 
 
 explore: congressional_district {
+  persist_for: "10000 hours"
   label: "Congressional Districts"
   join: state {
     sql_on: ${congressional_district.state_key} = ${state.county_key} ;;
@@ -44,7 +31,8 @@ explore: congressional_district {
 
 
 explore: zcta {
-  always_filter: {filters: {field:state.state_name value:"Please Enter a State to Filter By"} }
+  persist_for: "10000 hours"
+  always_filter: {filters: {field:state.state_name value:"Please Enter a State(s) to Filter By"} }
   label: "Zip Codes"
   join: state  {
     sql_on: ${state.county_key} = ${zcta.state_key} ;;
@@ -54,6 +42,7 @@ explore: zcta {
 
 
 explore: places {
+  persist_for: "10000 hours"
   label: "Places"
   join: state {
     sql_on: ${places.state_key} = ${state.county_key} ;;
