@@ -92,3 +92,10 @@ map_layer: congressional_districts {
   property_key: "GEOID"
   property_label_key: "NAMELSAD"
 }
+map_layer: school_districts {
+  label: "116th Congressional Districts (2019)"
+  file: "/maps/2019_us_schooldistricts.json"
+  format: topojson
+  property_key: "GEOID"
+  property_label_key: "NAME"
+}
