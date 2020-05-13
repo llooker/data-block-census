@@ -50,6 +50,14 @@ view: congressional_district {
     hidden: yes
   }
 
+  dimension: congressional_district_income_per_capita_dim {
+    type: number
+    sql: ${TABLE}.income_per_capita ;;
+    description: "Per Capita Income in the past 12 Months. Per capita income is the mean income computed for every man, woman, and child in a particular group. It is derived by dividing the total income of a particular group by the total population."
+    hidden: yes
+  }
+
+
   measure: congressional_district_median_rent {
     sql: MAX(${congressional_district_median_rent_dim}) ;;
     type: number
@@ -80,6 +88,14 @@ view: congressional_district {
     view_label: "Medians"
     group_label: "Congressional District"
     value_format_name: usd
+  }
+
+  measure: congressional_dsitrict_income_per_capita {
+    type: number
+    sql: MAX(${congressional_district_income_per_capita_dim}) ;;
+    view_label: "Income Per Capita"
+    group_label: "Congressional District"
+    description: "Per Capita Income in the past 12 Months. Per capita income is the mean income computed for every man, woman, and child in a particular group. It is derived by dividing the total income of a particular group by the total population."
   }
 
 

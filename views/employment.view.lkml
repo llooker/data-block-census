@@ -148,12 +148,7 @@ view: employment {
     hidden: yes
   }
 
-  dimension: income_per_capita_dim {
-    type: number
-    sql: ${TABLE}.income_per_capita ;;
-    description: "Per Capita Income in the past 12 Months. Per capita income is the mean income computed for every man, woman, and child in a particular group. It is derived by dividing the total income of a particular group by the total population."
-    hidden: yes
-  }
+
 
   dimension: civilian_labor_force_dim {
     type: number
@@ -202,6 +197,7 @@ view: employment {
   }
 
   measure: income_100000_124999 {
+    label: "$100,000 - $124,999"
     type: sum
     sql: ${income_100000_124999_dim} ;;
     view_label: "Employment"
@@ -210,6 +206,7 @@ view: employment {
   }
 
   measure: income_10000_14999 {
+    label: "$10,000 - $14,999"
     type: sum
     sql: ${income_10000_14999_dim} ;;
     view_label: "Employment"
@@ -218,6 +215,7 @@ view: employment {
   }
 
   measure: income_125000_149999 {
+    label: "$125,000 - $149,999"
     type: sum
     sql: ${income_125000_149999_dim} ;;
     view_label: "Employment"
@@ -226,6 +224,7 @@ view: employment {
   }
 
   measure: income_150000_199999 {
+    label: "$150,000 - $199,999"
     type: sum
     sql: ${income_150000_199999_dim} ;;
     view_label: "Employment"
@@ -234,6 +233,7 @@ view: employment {
   }
 
   measure: income_15000_19999 {
+    label: "$15,000 - $19,999"
     type: sum
     sql: ${income_15000_19999_dim} ;;
     view_label: "Employment"
@@ -242,6 +242,7 @@ view: employment {
   }
 
   measure: income_200000_or_more {
+    label: "$200,000 or more"
     type: sum
     sql: ${income_200000_or_more_dim} ;;
     view_label: "Employment"
@@ -250,6 +251,7 @@ view: employment {
   }
 
   measure: income_20000_24999 {
+    label: "$20,000 - $24,999"
     type: sum
     sql: ${income_20000_24999_dim} ;;
     view_label: "Employment"
@@ -258,6 +260,7 @@ view: employment {
   }
 
   measure: income_25000_29999 {
+    label: "$25,000 - $29,999"
     type: sum
     sql: ${income_25000_29999_dim} ;;
     view_label: "Employment"
@@ -266,6 +269,7 @@ view: employment {
   }
 
   measure: income_30000_34999 {
+    label: "$30,000 - $34,999"
     type: sum
     sql: ${income_30000_34999_dim} ;;
     view_label: "Employment"
@@ -274,6 +278,7 @@ view: employment {
   }
 
   measure: income_35000_39999 {
+    label: "$35,000 - $39,999"
     type: sum
     sql: ${income_35000_39999_dim} ;;
     view_label: "Employment"
@@ -282,6 +287,7 @@ view: employment {
   }
 
   measure: income_40000_44999 {
+    label: "$40,000 - $44,999"
     type: sum
     sql: ${income_40000_44999_dim} ;;
     view_label: "Employment"
@@ -290,6 +296,7 @@ view: employment {
   }
 
   measure: income_45000_49999 {
+    label: "$45,000 - $49,999"
     type: sum
     sql: ${income_45000_49999_dim} ;;
     view_label: "Employment"
@@ -298,6 +305,7 @@ view: employment {
   }
 
   measure: income_50000_59999 {
+    label: "$50,000 - $59,999"
     type: sum
     sql: ${income_50000_59999_dim} ;;
     view_label: "Employment"
@@ -306,6 +314,7 @@ view: employment {
   }
 
   measure: income_60000_74999 {
+    label: "$60,000 - $74,999"
     type: sum
     sql: ${income_60000_74999_dim} ;;
     view_label: "Employment"
@@ -314,6 +323,7 @@ view: employment {
   }
 
   measure: income_75000_99999 {
+    label: "$75,000 - $99,999"
     type: sum
     sql: ${income_75000_99999_dim} ;;
     view_label: "Employment"
@@ -322,6 +332,7 @@ view: employment {
   }
 
   measure: income_less_10000 {
+    label: "Less than $10,000"
     type: sum
     sql: ${income_less_10000_dim} ;;
     view_label: "Employment"
@@ -329,13 +340,6 @@ view: employment {
     description: "Households with income less than $10,000. The number of households in a geographic area whose annual income was less than $10,000."
   }
 
-  measure: income_per_capita {
-    type: sum
-    sql: ${income_per_capita_dim} ;;
-    view_label: "Employment"
-    group_label: "Income Range"
-    description: "Per Capita Income in the past 12 Months. Per capita income is the mean income computed for every man, woman, and child in a particular group. It is derived by dividing the total income of a particular group by the total population."
-  }
 
   measure: civilian_labor_force {
     type: sum

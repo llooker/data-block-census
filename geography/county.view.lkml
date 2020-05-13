@@ -72,6 +72,13 @@ view: county {
     hidden: yes
   }
 
+  dimension: county_income_per_capita_dim {
+    type: number
+    sql: ${TABLE}.income_per_capita ;;
+    description: "Per Capita Income in the past 12 Months. Per capita income is the mean income computed for every man, woman, and child in a particular group. It is derived by dividing the total income of a particular group by the total population."
+    hidden: yes
+  }
+
   measure: county_median_rent {
     sql: MAX(${county_median_rent_dim}) ;;
     type: number
@@ -102,6 +109,14 @@ view: county {
     view_label: "Medians"
     group_label: "County"
     value_format_name: usd
+  }
+
+  measure: county_income_per_capita {
+    type: number
+    sql: MAX(${county_income_per_capita_dim}) ;;
+    view_label: "Income Per Capita"
+    group_label: "County"
+    description: "Per Capita Income in the past 12 Months. Per capita income is the mean income computed for every man, woman, and child in a particular group. It is derived by dividing the total income of a particular group by the total population."
   }
 
 

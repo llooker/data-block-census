@@ -340,6 +340,7 @@ view: gender {
   }
 
   measure: female_10_to_14 {
+    label: "Age 10-14"
     type: sum
     sql: ${female_10_to_14_dim} ;;
     view_label: "Gender"
@@ -348,6 +349,7 @@ view: gender {
   }
 
   measure: female_15_to_17 {
+    label: "Age 15-17"
     type: sum
     sql: ${female_15_to_17_dim} ;;
     view_label: "Gender"
@@ -356,6 +358,7 @@ view: gender {
   }
 
   measure: female_18_to_19 {
+    label: "Age 18-19"
     type: sum
     sql: ${female_18_to_19_dim} ;;
     view_label: "Gender"
@@ -364,6 +367,7 @@ view: gender {
   }
 
   measure: female_20 {
+    label: "Age 20"
     type: sum
     sql: ${female_20_dim} ;;
     view_label: "Gender"
@@ -372,6 +376,7 @@ view: gender {
   }
 
   measure: female_21 {
+    label: "Age 21"
     type: sum
     sql: ${female_21_dim} ;;
     view_label: "Gender"
@@ -380,6 +385,7 @@ view: gender {
   }
 
   measure: female_22_to_24 {
+    label: "Age 22-24"
     type: sum
     sql: ${female_22_to_24_dim} ;;
     view_label: "Gender"
@@ -388,6 +394,7 @@ view: gender {
   }
 
   measure: female_25_to_29 {
+    label: "Age 25-29"
     type: sum
     sql: ${female_25_to_29_dim} ;;
     view_label: "Gender"
@@ -396,6 +403,7 @@ view: gender {
   }
 
   measure: female_30_to_34 {
+    label: "Age 30-34"
     type: sum
     sql: ${female_30_to_34_dim} ;;
     view_label: "Gender"
@@ -404,6 +412,7 @@ view: gender {
   }
 
   measure: female_35_to_39 {
+    label: "Age 35-39"
     type: sum
     sql: ${female_35_to_39_dim} ;;
     view_label: "Gender"
@@ -412,6 +421,7 @@ view: gender {
   }
 
   measure: female_40_to_44 {
+    label: "Age 40-44"
     type: sum
     sql: ${female_40_to_44_dim} ;;
     view_label: "Gender"
@@ -420,6 +430,7 @@ view: gender {
   }
 
   measure: female_45_to_49 {
+    label: "Age 45-49"
     type: sum
     sql: ${female_45_to_49_dim} ;;
     view_label: "Gender"
@@ -428,6 +439,7 @@ view: gender {
   }
 
   measure: female_50_to_54 {
+    label: "Age 50-54"
     type: sum
     sql: ${female_50_to_54_dim} ;;
     view_label: "Gender"
@@ -436,6 +448,7 @@ view: gender {
   }
 
   measure: female_55_to_59 {
+    label: "Age 55-59"
     type: sum
     sql: ${female_55_to_59_dim} ;;
     view_label: "Gender"
@@ -444,6 +457,7 @@ view: gender {
   }
 
   measure: female_5_to_9 {
+    label: "Age 5-9"
     type: sum
     sql: ${female_5_to_9_dim} ;;
     view_label: "Gender"
@@ -452,6 +466,7 @@ view: gender {
   }
 
   measure: female_60_to_61 {
+    label: "Age 60-61"
     type: sum
     sql: ${female_60_to_61_dim} ;;
     view_label: "Gender"
@@ -460,6 +475,7 @@ view: gender {
   }
 
   measure: female_62_to_64 {
+    label: "Age 62-64"
     type: sum
     sql: ${female_62_to_64_dim} ;;
     view_label: "Gender"
@@ -468,6 +484,7 @@ view: gender {
   }
 
   measure: female_65_to_66 {
+    label: "Age 65-66"
     type: sum
     sql: ${female_65_to_66_dim} ;;
     view_label: "Gender"
@@ -476,6 +493,7 @@ view: gender {
   }
 
   measure: female_67_to_69 {
+    label: "Age 67-69"
     type: sum
     sql: ${female_67_to_69_dim} ;;
     view_label: "Gender"
@@ -484,6 +502,7 @@ view: gender {
   }
 
   measure: female_70_to_74 {
+    label: "Age 70-74"
     type: sum
     sql: ${female_70_to_74_dim} ;;
     view_label: "Gender"
@@ -492,6 +511,7 @@ view: gender {
   }
 
   measure: female_75_to_79 {
+    label: "Age 75-79"
     type: sum
     sql: ${female_75_to_79_dim} ;;
     view_label: "Gender"
@@ -500,6 +520,7 @@ view: gender {
   }
 
   measure: female_80_to_84 {
+    label: "Age 80-84"
     type: sum
     sql: ${female_80_to_84_dim} ;;
     view_label: "Gender"
@@ -508,6 +529,7 @@ view: gender {
   }
 
   measure: female_85_and_over {
+    label: "Age 85 and over"
     type: sum
     sql: ${female_85_and_over_dim} ;;
     view_label: "Gender"
@@ -516,6 +538,7 @@ view: gender {
   }
 
   measure: female_pop {
+    label: "Total Female Population"
     type: sum
     sql: ${female_pop_dim} ;;
     view_label: "Gender"
@@ -524,6 +547,7 @@ view: gender {
   }
 
   measure: female_under_5 {
+    label: "Age under 5"
     type: sum
     sql: ${female_under_5_dim} ;;
     view_label: "Gender"
@@ -532,6 +556,7 @@ view: gender {
   }
 
   measure: male_10_to_14 {
+    label: "Age 10-14"
     type: sum
     sql: ${male_10_to_14_dim} ;;
     view_label: "Gender"
@@ -540,6 +565,7 @@ view: gender {
   }
 
   measure: male_15_to_17 {
+    label: "Age 15-17"
     type: sum
     sql: ${male_15_to_17_dim} ;;
     view_label: "Gender"
@@ -548,6 +574,7 @@ view: gender {
   }
 
   measure: male_18_to_19 {
+    label: "Age 18-19"
     type: sum
     sql: ${male_18_to_19_dim} ;;
     view_label: "Gender"
@@ -556,6 +583,7 @@ view: gender {
   }
 
   measure: male_20 {
+    label: "Age 20"
     type: sum
     sql: ${male_20_dim} ;;
     view_label: "Gender"
@@ -564,6 +592,7 @@ view: gender {
   }
 
   measure: male_21 {
+    label: "Age 21"
     type: sum
     sql: ${male_21_dim} ;;
     view_label: "Gender"
@@ -572,6 +601,7 @@ view: gender {
   }
 
   measure: male_22_to_24 {
+    label: "Age 22-24"
     type: sum
     sql: ${male_22_to_24_dim} ;;
     view_label: "Gender"
@@ -580,6 +610,7 @@ view: gender {
   }
 
   measure: male_25_to_29 {
+    label: "Age 25-29"
     type: sum
     sql: ${male_25_to_29_dim} ;;
     view_label: "Gender"
@@ -588,6 +619,7 @@ view: gender {
   }
 
   measure: male_30_to_34 {
+    label: "Age 30-34"
     type: sum
     sql: ${male_30_to_34_dim} ;;
     view_label: "Gender"
@@ -596,6 +628,7 @@ view: gender {
   }
 
   measure: male_35_to_39 {
+    label: "Age 35-39"
     type: sum
     sql: ${male_35_to_39_dim} ;;
     view_label: "Gender"
@@ -604,6 +637,7 @@ view: gender {
   }
 
   measure: male_40_to_44 {
+    label: "Age 40-44"
     type: sum
     sql: ${male_40_to_44_dim} ;;
     view_label: "Gender"
@@ -612,6 +646,7 @@ view: gender {
   }
 
   measure: male_45_to_49 {
+    label: "Age 45-49"
     type: sum
     sql: ${male_45_to_49_dim} ;;
     view_label: "Gender"
@@ -620,6 +655,7 @@ view: gender {
   }
 
   measure: male_50_to_54 {
+    label: "Age 50-54"
     type: sum
     sql: ${male_50_to_54_dim} ;;
     view_label: "Gender"
@@ -628,6 +664,7 @@ view: gender {
   }
 
   measure: male_55_to_59 {
+    label: "Age 55-59"
     type: sum
     sql: ${male_55_to_59_dim} ;;
     view_label: "Gender"
@@ -636,6 +673,7 @@ view: gender {
   }
 
   measure: male_5_to_9 {
+    label: "Age 5-9"
     type: sum
     sql: ${male_5_to_9_dim} ;;
     view_label: "Gender"
@@ -644,6 +682,7 @@ view: gender {
   }
 
   measure: male_60_61 {
+    label: "Age 60-61"
     type: sum
     sql: ${male_60_61_dim} ;;
     view_label: "Gender"
@@ -652,6 +691,7 @@ view: gender {
   }
 
   measure: male_62_64 {
+    label: "Age 62-64"
     type: sum
     sql: ${male_62_64_dim} ;;
     view_label: "Gender"
@@ -660,6 +700,7 @@ view: gender {
   }
 
   measure: male_65_to_66 {
+    label: "Age 65-66"
     type: sum
     sql: ${male_65_to_66_dim} ;;
     view_label: "Gender"
@@ -668,6 +709,7 @@ view: gender {
   }
 
   measure: male_67_to_69 {
+    label: "Age 67-69"
     type: sum
     sql: ${male_67_to_69_dim} ;;
     view_label: "Gender"
@@ -676,6 +718,7 @@ view: gender {
   }
 
   measure: male_70_to_74 {
+    label: "Age 70-74"
     type: sum
     sql: ${male_70_to_74_dim} ;;
     view_label: "Gender"
@@ -684,6 +727,7 @@ view: gender {
   }
 
   measure: male_75_to_79 {
+    label: "Age 75-79"
     type: sum
     sql: ${male_75_to_79_dim} ;;
     view_label: "Gender"
@@ -692,6 +736,7 @@ view: gender {
   }
 
   measure: male_80_to_84 {
+    label: "Age 80-84"
     type: sum
     sql: ${male_80_to_84_dim} ;;
     view_label: "Gender"
@@ -700,6 +745,7 @@ view: gender {
   }
 
   measure: male_85_and_over {
+    label: "Age 85 and over"
     type: sum
     sql: ${male_85_and_over_dim} ;;
     view_label: "Gender"
@@ -708,6 +754,7 @@ view: gender {
   }
 
   measure: male_pop {
+    label: "Total Male Population"
     type: sum
     sql: ${male_pop_dim} ;;
     view_label: "Gender"
@@ -716,6 +763,7 @@ view: gender {
   }
 
   measure: male_under_5 {
+    label: "Age under 5"
     type: sum
     sql: ${male_under_5_dim} ;;
     view_label: "Gender"

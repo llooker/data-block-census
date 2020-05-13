@@ -81,6 +81,13 @@ view: places {
     hidden: yes
   }
 
+  dimension: places_income_per_capita_dim {
+    type: number
+    sql: ${TABLE}.income_per_capita ;;
+    description: "Per Capita Income in the past 12 Months. Per capita income is the mean income computed for every man, woman, and child in a particular group. It is derived by dividing the total income of a particular group by the total population."
+    hidden: yes
+  }
+
   measure: places_median_rent {
     sql: MAX(${places_median_rent_dim}) ;;
     type: number
@@ -120,6 +127,14 @@ view: places {
     view_label: "Medians"
     group_label: "Places"
     hidden: yes
+  }
+
+  measure: places_income_per_capita {
+    type: number
+    sql: MAX(${places_income_per_capita_dim}) ;;
+    view_label: "Income Per Capita"
+    group_label: "Places"
+    description: "Per Capita Income in the past 12 Months. Per capita income is the mean income computed for every man, woman, and child in a particular group. It is derived by dividing the total income of a particular group by the total population."
   }
 
 }

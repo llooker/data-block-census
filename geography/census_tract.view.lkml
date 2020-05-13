@@ -18,6 +18,90 @@ view: census_tract {
     hidden: yes
   }
 
+  dimension: census_tract_median_income_dim {
+    sql: ${TABLE}.median_income ;;
+    view_label: "Medians"
+    group_label: "Census Tract"
+    value_format_name: usd
+    hidden: yes
+  }
+
+  dimension: census_tract_median_rent_dim {
+    sql: ${TABLE}.median_rent ;;
+    view_label: "Medians"
+    group_label: "Census Tract"
+    value_format_name: usd
+    hidden: yes
+  }
+
+  dimension: census_tract_median_year_structure_built_dim {
+    sql: ${TABLE}.median_year_structure_built ;;
+    view_label: "Medians"
+    group_label: "Census Tract"
+    value_format_name: decimal_0
+    hidden: yes
+  }
+
+  dimension: census_tract_gross_rent_dim {
+    sql: ${TABLE}.renter_occupied_housing_units_paying_cash_median_gross_rent ;;
+    view_label: "Medians"
+    group_label: "Census Tract"
+    value_format_name: usd
+    hidden: yes
+  }
+
+  dimension: census_tract_income_per_capita_dim {
+    type: number
+    sql: ${TABLE}.income_per_capita ;;
+    description: "Per Capita Income in the past 12 Months. Per capita income is the mean income computed for every man, woman, and child in a particular group. It is derived by dividing the total income of a particular group by the total population."
+    hidden: yes
+  }
+
+  measure: census_tract_median_income {
+    sql: MAX(${census_tract_median_income_dim}) ;;
+    type: number
+    view_label: "Medians"
+    group_label: "Census Tract"
+    value_format_name: usd
+  }
+
+  measure: census_tract_median_rent {
+    sql: MAX(${census_tract_median_rent_dim}) ;;
+    type: number
+    view_label: "Medians"
+    group_label: "Census Tract"
+    value_format_name: usd
+  }
+
+  measure: census_tract_median_year_structure_built {
+    sql: MAX(${census_tract_median_year_structure_built_dim}) ;;
+    type: number
+    view_label: "Medians"
+    group_label: "Census Tract"
+    value_format_name: decimal_0
+  }
+
+  measure: census_tract_gross_rent {
+    sql: MAX(${census_tract_gross_rent_dim}) ;;
+    type: number
+    view_label: "Medians"
+    group_label: "Census Tract"
+    value_format_name: usd
+  }
+
+
+
+  measure: census_tract_income_per_capita {
+    type: number
+    sql: MAX(${census_tract_income_per_capita_dim}) ;;
+    view_label: "Income Per Capita"
+    group_label: "Census Tract"
+    description: "Per Capita Income in the past 12 Months. Per capita income is the mean income computed for every man, woman, and child in a particular group. It is derived by dividing the total income of a particular group by the total population."
+  }
+
+
+
+
 }
 
 #map_layer: census_tract {
