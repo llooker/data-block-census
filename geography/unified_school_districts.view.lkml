@@ -1,5 +1,4 @@
 include: "/views/*"
-include: "/maps/map_layers.lkml"
 
 view: school_districts_unified {
   extends: [commute, education, housing, population, race, employment, family, gender]
@@ -9,7 +8,6 @@ view: school_districts_unified {
   dimension: unified_school_districts {
     primary_key: yes
     sql: ${TABLE}.geo_id ;;
-    map_layer_name: school_districts
     view_label: "Geography"
   }
 

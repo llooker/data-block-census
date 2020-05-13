@@ -19,7 +19,6 @@ explore: acs_census_data {
   }
 }
 
-
 explore: congressional_district {
   persist_for: "10000 hours"
   always_filter: {filters: {field:state.state_name value:"Please Enter State(s) to Filter By"} }
@@ -29,7 +28,6 @@ explore: congressional_district {
     relationship: many_to_one
   }
 }
-
 
 explore: school_districts_unified {
   persist_for: "10000 hours"
@@ -41,6 +39,36 @@ explore: school_districts_unified {
   }
 }
 
+explore: school_districts_elementary {
+  persist_for: "10000 hours"
+  always_filter: {filters: {field:state.state_name value:"Please Enter State(s) to Filter By"} }
+  label: "Elementary School Districts"
+  join: state {
+    sql_on: ${school_districts_elementary.state_key} = ${state.key} ;;
+    relationship: many_to_one
+  }
+}
+
+explore: school_districts_secondary {
+  persist_for: "10000 hours"
+  always_filter: {filters: {field:state.state_name value:"Please Enter State(s) to Filter By"} }
+  label: "Secondary School Districts"
+  join: state {
+    sql_on: ${school_districts_secondary.state_key} = ${state.key} ;;
+    relationship: many_to_one
+  }
+}
+
+explore: puma {
+  persist_for: "10000 hours"
+  always_filter: {filters: {field:state.state_name value:"Please Enter State(s) to Filter By"} }
+  label: "Public Use Microdata Areas"
+  join: state {
+    sql_on: ${puma.state_key} = ${state.key} ;;
+    relationship: many_to_one
+  }
+
+}
 
 explore: zcta {
   persist_for: "10000 hours"
