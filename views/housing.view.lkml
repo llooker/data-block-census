@@ -433,22 +433,6 @@ view: housing {
     description: "Vacant Housing Units for Sale. The count of vacant housing units in a geographic area that are for sale. A housing unit is vacant if no one is living in it at the time of enumeration, unless its occupants are only temporarily absent. Units temporarily occupied at the time of enumeration entirely by people who have a usual residence elsewhere are also classified as vacant."
   }
 
-  measure: median_rent {
-    type: sum
-    sql: ${median_rent_dim} ;;
-    view_label: "Housing"
-    group_label: "Median"
-    description: "Median Rent. The median contract rent within a geographic area. The contract rent is the monthly rent agreed to or contracted for, regardless of any furnishings, utilities, fees, meals, or services that may be included. For vacant units, it is the monthly rent asked for the rental unit at the time of interview."
-  }
-
-  measure: median_year_structure_built {
-    type: sum
-    sql: ${median_year_structure_built_dim} ;;
-    view_label: "Housing"
-    group_label: "Median"
-    description: "Median Year Structure Built. Median Year Structure Built"
-  }
-
   measure: million_dollar_housing_units {
     type: sum
     sql: ${million_dollar_housing_units_dim} ;;
@@ -552,51 +536,11 @@ view: housing {
     description: "Housing units spending less than 10% on rent. Gross rent less than 10 percent of household income. Computed ratio of monthly gross rent to monthly household income (total household income divided by 12). The ratio is computed separately for each unit and is rounded to the nearest tenth. Units for which no rent is paid and units occupied by households that report no income or a net loss comprise the category, 'Not computed'. Gross rent as a percentage of household income provides information on the monthly housing cost expenses for renters. "
   }
 
-  measure: renter_occupied_housing_units_paying_cash_median_gross_rent {
-    type: sum
-    sql: ${renter_occupied_housing_units_paying_cash_median_gross_rent_dim} ;;
-    view_label: "Housing"
-    group_label: "Rent"
-    description: "Renter-Occupied Housing Units Paying Cash Rent Median Gross Rent"
-  }
-
   measure: owner_occupied_housing_units {
     type: sum
     sql: ${owner_occupied_housing_units_dim} ;;
     view_label: "Housing"
     group_label: "Own"
     description: "Owner-occupied Housing Units"
-  }
-
-  measure: owner_occupied_housing_units_lower_value_quartile {
-    type: sum
-    sql: ${owner_occupied_housing_units_lower_value_quartile_dim} ;;
-    view_label: "Housing"
-    group_label: "Own"
-    description: "Owner-Occupied Housing Units Lower Value Quartile"
-  }
-
-  measure: owner_occupied_housing_units_median_value {
-    type: sum
-    sql: ${owner_occupied_housing_units_median_value_dim} ;;
-    view_label: "Housing"
-    group_label: "Own"
-    description: "Owner-Occupied Housing Units Median Value. The middle value (median) in a geographic area owner occupied housing units."
-  }
-
-  measure: owner_occupied_housing_units_upper_value_quartile {
-    type: sum
-    sql: ${owner_occupied_housing_units_upper_value_quartile_dim} ;;
-    view_label: "Housing"
-    group_label: "Own"
-    description: "Owner-Occupied Housing Units Upper Value Quartile"
-  }
-
-  measure: percent_income_spent_on_rent {
-    type: sum
-    sql: ${percent_income_spent_on_rent_dim} ;;
-    view_label: "Housing"
-    group_label: "Rent"
-    description: "Percent of Household Income Spent on Rent. Within a geographic area, the median percentage of household income which was spent on gross rent.  Gross rent is the amount of the contract rent plus the estimated average monthly cost of utilities (electricity, gas, water, sewer etc.) and fuels (oil, coal, wood, etc.) if these are paid by the renter.  Household income is the sum of the income of all people 15 years and older living in the household."
   }
 }

@@ -71,6 +71,17 @@ view: state {
     type: number
     sql: ${TABLE}.income_per_capita ;;
     description: "Per Capita Income in the past 12 Months. Per capita income is the mean income computed for every man, woman, and child in a particular group. It is derived by dividing the total income of a particular group by the total population."
+    view_label: "Income Per Capita"
+    group_label: "State"
+    hidden: yes
+  }
+
+
+  dimension: state_percent_income_spent_on_rent_dim {
+    sql: ${TABLE}.percent_income_spent_on_rent ;;
+    view_label: "Medians"
+    group_label: "State"
+    value_format_name: percent_1
     hidden: yes
   }
 
@@ -106,12 +117,22 @@ view: state {
     value_format_name: usd
   }
 
+
   measure: state_income_per_capita {
     type: number
     sql: MAX(${state_income_per_capita_dim}) ;;
     view_label: "Income Per Capita"
     group_label: "State"
     description: "Per Capita Income in the past 12 Months. Per capita income is the mean income computed for every man, woman, and child in a particular group. It is derived by dividing the total income of a particular group by the total population."
+  }
+
+  measure: state_percent_income_spent_on_rent {
+    sql: MAX(${state_percent_income_spent_on_rent_dim}) ;;
+    type: number
+    view_label: "Medians"
+    group_label: "State"
+    value_format_name: percent_1
+
   }
 
 }

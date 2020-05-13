@@ -56,10 +56,22 @@ view: blockgroup {
     hidden: yes
   }
 
+
   dimension: block_group_income_per_capita_dim {
     type: number
     sql: ${TABLE}.income_per_capita ;;
     description: "Per Capita Income in the past 12 Months. Per capita income is the mean income computed for every man, woman, and child in a particular group. It is derived by dividing the total income of a particular group by the total population."
+    view_label: "Income Per Capita"
+    group_label: "Block Group"
+    hidden: yes
+  }
+
+
+  dimension: block_group_percent_income_spent_on_rent_dim {
+    sql: ${TABLE}.percent_income_spent_on_rent ;;
+    view_label: "Medians"
+    group_label: "Block Group"
+    value_format_name: percent_1
     hidden: yes
   }
 
@@ -95,12 +107,22 @@ view: blockgroup {
     value_format_name: usd
   }
 
+
   measure: block_group_income_per_capita {
     type: number
     sql: MAX(${block_group_income_per_capita_dim}) ;;
     view_label: "Income Per Capita"
     group_label: "Block Group"
     description: "Per Capita Income in the past 12 Months. Per capita income is the mean income computed for every man, woman, and child in a particular group. It is derived by dividing the total income of a particular group by the total population."
+  }
+
+
+  measure: block_group_percent_income_spent_on_rent {
+    sql: MAX(${block_group_percent_income_spent_on_rent_dim}) ;;
+    type: number
+    view_label: "Medians"
+    group_label: "Block Group"
+    value_format_name: percent_1
   }
 
 

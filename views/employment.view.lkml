@@ -157,13 +157,6 @@ view: employment {
     hidden: yes
   }
 
-  measure: median_income {
-    type: sum
-    sql: ${median_income_dim} ;;
-    view_label: "Employment"
-    description: "Median Household Income in the past 12 Months. Within a geographic area, the median income received by every household on a regular basis before payments for personal income taxes, social security, union dues, medicare deductions, etc.  It includes income received from wages, salary, commissions, bonuses, and tips; self-employment income from own nonfarm or farm businesses, including proprietorships and partnerships; interest, dividends, net rental income, royalty income, or income from estates and trusts; Social Security or Railroad Retirement income; Supplemental Security Income (SSI); any cash public assistance or welfare payments from the state or local welfare office; retirement, survivor, or disability benefits; and any other sources of income received regularly such as Veterans' (VA) payments, unemployment and/or worker's compensation, child support, and alimony."
-  }
-
   measure: not_in_labor_force {
     type: sum
     sql: ${not_in_labor_force_dim} ;;

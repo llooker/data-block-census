@@ -48,6 +48,14 @@ view: county {
     hidden: yes
   }
 
+  dimension: county_percent_income_spent_on_rent_dim {
+    sql: ${TABLE}.percent_income_spent_on_rent ;;
+    view_label: "Medians"
+    group_label: "County"
+    value_format_name: percent_1
+    hidden: yes
+  }
+
   dimension: county_median_rent_dim {
     sql: ${TABLE}.median_rent ;;
     view_label: "Medians"
@@ -119,5 +127,12 @@ view: county {
     description: "Per Capita Income in the past 12 Months. Per capita income is the mean income computed for every man, woman, and child in a particular group. It is derived by dividing the total income of a particular group by the total population."
   }
 
+  measure: county_percent_income_spent_on_rent {
+    sql: MAX(${county_percent_income_spent_on_rent_dim}) ;;
+    type: number
+    view_label: "Medians"
+    group_label: "County"
+    value_format_name: percent_1
+  }
 
 }
