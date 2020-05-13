@@ -81,6 +81,13 @@ view: zcta {
     hidden: yes
   }
 
+  dimension: zcta_median_age_dim {
+    type: number
+    sql: ${TABLE}.median_age ;;
+    description: "Median Age. The median age of all people in a given geographic area."
+    hidden: yes
+  }
+
 
   measure: zcta_median_rent {
     sql: MAX(${zcta_median_rent_dim}) ;;
@@ -114,12 +121,20 @@ view: zcta {
     value_format_name: usd
   }
 
-  measure: county_income_per_capita {
+  measure: zcta_income_per_capita {
     type: number
     sql: MAX(${zcta_income_per_capita_dim}) ;;
     view_label: "Income Per Capita"
     group_label: "ZCTA"
     description: "Per Capita Income in the past 12 Months. Per capita income is the mean income computed for every man, woman, and child in a particular group. It is derived by dividing the total income of a particular group by the total population."
+  }
+
+  measure: zcta_median_age {
+    type: number
+    sql: MAX(${zcta_median_age_dim}) ;;
+    view_label: "Medians"
+    group_label: "ZCTA"
+    description: "Median Age. The median age of all people in a given geographic area."
   }
 
 

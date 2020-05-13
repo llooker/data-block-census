@@ -57,6 +57,14 @@ view: census_tract {
     hidden: yes
   }
 
+  dimension: census_tract_median_age_dim {
+    type: number
+    sql: ${TABLE}.median_age ;;
+    description: "Median Age. The median age of all people in a given geographic area."
+    hidden: yes
+  }
+
+
   measure: census_tract_median_income {
     sql: MAX(${census_tract_median_income_dim}) ;;
     type: number
@@ -89,14 +97,21 @@ view: census_tract {
     value_format_name: usd
   }
 
-
-
   measure: census_tract_income_per_capita {
     type: number
     sql: MAX(${census_tract_income_per_capita_dim}) ;;
     view_label: "Income Per Capita"
     group_label: "Census Tract"
     description: "Per Capita Income in the past 12 Months. Per capita income is the mean income computed for every man, woman, and child in a particular group. It is derived by dividing the total income of a particular group by the total population."
+  }
+
+
+  measure: census_tract_median_age {
+    type: number
+    sql: MAX(${census_tract_median_age_dim}) ;;
+    view_label: "Medians"
+    group_label: "Census Tract"
+    description: "Median Age. The median age of all people in a given geographic area."
   }
 
 

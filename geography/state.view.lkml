@@ -85,6 +85,13 @@ view: state {
     hidden: yes
   }
 
+  dimension: state_median_age_dim {
+    type: number
+    sql: ${TABLE}.median_age ;;
+    description: "Median Age. The median age of all people in a given geographic area."
+    hidden: yes
+  }
+
   measure: state_median_rent {
     sql: MAX(${state_median_rent_dim}) ;;
     type: number
@@ -132,7 +139,14 @@ view: state {
     view_label: "Medians"
     group_label: "State"
     value_format_name: percent_1
+  }
 
+  measure: state_median_age {
+    type: number
+    sql: MAX(${state_median_age_dim}) ;;
+    view_label: "Medians"
+    group_label: "State"
+    description: "Median Age. The median age of all people in a given geographic area."
   }
 
 }

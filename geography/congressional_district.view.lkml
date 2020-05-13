@@ -57,6 +57,13 @@ view: congressional_district {
     hidden: yes
   }
 
+  dimension: congressional_district_median_age_dim {
+    type: number
+    sql: ${TABLE}.median_age ;;
+    description: "Median Age. The median age of all people in a given geographic area."
+    hidden: yes
+  }
+
 
   measure: congressional_district_median_rent {
     sql: MAX(${congressional_district_median_rent_dim}) ;;
@@ -96,6 +103,14 @@ view: congressional_district {
     view_label: "Income Per Capita"
     group_label: "Congressional District"
     description: "Per Capita Income in the past 12 Months. Per capita income is the mean income computed for every man, woman, and child in a particular group. It is derived by dividing the total income of a particular group by the total population."
+  }
+
+  measure: congressional_district_median_age {
+    type: number
+    sql:MAX(${congressional_district_median_age_dim});;
+    view_label: "Medians"
+    group_label: "Congressional District"
+    description: "Median Age. The median age of all people in a given geographic area."
   }
 
 

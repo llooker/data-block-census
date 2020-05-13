@@ -75,6 +75,13 @@ view: blockgroup {
     hidden: yes
   }
 
+  dimension: block_group_median_age_dim {
+    type: number
+    sql: ${TABLE}.median_age ;;
+    description: "Median Age. The median age of all people in a given geographic area."
+    hidden: yes
+  }
+
   measure: block_group_median_income {
     sql: MAX(${block_group_median_income_dim}) ;;
     type: number

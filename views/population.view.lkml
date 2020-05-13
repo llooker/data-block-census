@@ -1,13 +1,6 @@
 view: population {
   extension: required
 
-  dimension: median_age_dim {
-    type: number
-    sql: ${TABLE}.median_age ;;
-    description: "Median Age. The median age of all people in a given geographic area."
-    hidden: yes
-  }
-
   dimension: pop_16_over_dim {
     type: number
     sql: ${TABLE}.pop_16_over ;;
@@ -34,13 +27,6 @@ view: population {
     sql: ${TABLE}.armed_forces ;;
     description: "Population in Armed Forces. The number of people in each geography who are members of the U.S. Armed Forces (people on active duty with the United States Army, Air Force, Navy, Marine Corps, or Coast Guard)."
     hidden: yes
-  }
-
-  measure: median_age {
-    type: sum
-    sql: ${median_age_dim} ;;
-    view_label: "Population"
-    description: "Median Age. The median age of all people in a given geographic area."
   }
 
   measure: pop_16_over {

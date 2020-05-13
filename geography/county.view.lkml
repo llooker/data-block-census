@@ -87,6 +87,13 @@ view: county {
     hidden: yes
   }
 
+  dimension: county_median_age_dim {
+    type: number
+    sql: ${TABLE}.median_age ;;
+    description: "Median Age. The median age of all people in a given geographic area."
+    hidden: yes
+  }
+
   measure: county_median_rent {
     sql: MAX(${county_median_rent_dim}) ;;
     type: number
@@ -133,6 +140,15 @@ view: county {
     view_label: "Medians"
     group_label: "County"
     value_format_name: percent_1
+  }
+
+  measure: county_median_age {
+    sql: MAX(${county_median_age_dim}) ;;
+    type: number
+    view_label: "Medians"
+    group_label: "County"
+    description: "Median Age. The median age of all people in a given geographic area."
+
   }
 
 }

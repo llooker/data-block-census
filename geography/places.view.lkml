@@ -74,12 +74,6 @@ view: places {
     hidden: yes
   }
 
-  dimension: median_age_dim {
-    type: number
-    sql: ${TABLE}.median_age ;;
-    description: "Median Age. The median age of all people in a given geographic area."
-    hidden: yes
-  }
 
   dimension: places_income_per_capita_dim {
     type: number
@@ -87,6 +81,14 @@ view: places {
     description: "Per Capita Income in the past 12 Months. Per capita income is the mean income computed for every man, woman, and child in a particular group. It is derived by dividing the total income of a particular group by the total population."
     hidden: yes
   }
+
+  dimension: places_median_age_dim {
+    type: number
+    sql: ${TABLE}.median_age ;;
+    description: "Median Age. The median age of all people in a given geographic area."
+    hidden: yes
+  }
+
 
   measure: places_median_rent {
     sql: MAX(${places_median_rent_dim}) ;;
@@ -135,6 +137,14 @@ view: places {
     view_label: "Income Per Capita"
     group_label: "Places"
     description: "Per Capita Income in the past 12 Months. Per capita income is the mean income computed for every man, woman, and child in a particular group. It is derived by dividing the total income of a particular group by the total population."
+  }
+
+  measure: places_median_age {
+    type: number
+    sql: MAX(${places_median_age_dim}) ;;
+    view_label: "Medians"
+    group_label: "Places"
+    description: "Median Age. The median age of all people in a given geographic area."
   }
 
 }
