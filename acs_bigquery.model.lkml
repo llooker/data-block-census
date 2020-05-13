@@ -31,12 +31,12 @@ explore: congressional_district {
 }
 
 
-explore: unified_school_districts {
+explore: school_districts_unified {
   persist_for: "10000 hours"
   always_filter: {filters: {field:state.state_name value:"Please Enter State(s) to Filter By"} }
   label: "Unified School Districts"
   join: state {
-    sql_on: ${unified_school_districts.state_key} = ${state.key} ;;
+    sql_on: ${school_districts_unified.state_key} = ${state.key} ;;
     relationship: many_to_one
   }
 }

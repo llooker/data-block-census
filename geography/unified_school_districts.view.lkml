@@ -1,10 +1,9 @@
 include: "/views/*"
 include: "/maps/map_layers.lkml"
 
-view: unified_school_districts {
-  extends: [commute, education, housing, population]
+view: school_districts_unified {
+  extends: [commute, education, housing, population, race, employment, family, gender]
   sql_table_name: `bigquery-public-data.census_bureau_acs.schooldistrictunified_2015_5yr` ;;
-
 
 
   dimension: unified_school_districts {
@@ -18,6 +17,5 @@ view: unified_school_districts {
     sql: SUBSTR(CAST(${TABLE}.geo_id as STRING), 0, 2) ;;
     hidden: yes
   }
-
 
 }
