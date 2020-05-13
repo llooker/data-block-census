@@ -48,6 +48,14 @@ view: county {
     hidden: yes
   }
 
+  dimension: county_percent_income_spent_on_rent_dim {
+    sql: ${TABLE}.percent_income_spent_on_rent ;;
+    view_label: "Medians"
+    group_label: "County"
+    value_format_name: percent_1
+    hidden: yes
+  }
+
   dimension: county_median_rent_dim {
     sql: ${TABLE}.median_rent ;;
     view_label: "Medians"
@@ -104,5 +112,12 @@ view: county {
     value_format_name: usd
   }
 
+  measure: county_percent_income_spent_on_rent {
+    sql: MAX(${county_percent_income_spent_on_rent_dim}) ;;
+    type: number
+    view_label: "Medians"
+    group_label: "County"
+    value_format_name: percent_1
+  }
 
 }

@@ -67,6 +67,14 @@ view: state {
     hidden: yes
   }
 
+  dimension: state_percent_income_spent_on_rent_dim {
+    sql: ${TABLE}.percent_income_spent_on_rent ;;
+    view_label: "Medians"
+    group_label: "State"
+    value_format_name: percent_1
+    hidden: yes
+  }
+
   measure: state_median_rent {
     sql: MAX(${state_median_rent_dim}) ;;
     type: number
@@ -97,6 +105,14 @@ view: state {
     view_label: "Medians"
     group_label: "State"
     value_format_name: usd
+  }
+
+  measure: state_percent_income_spent_on_rent {
+    sql: MAX(${state_percent_income_spent_on_rent_dim}) ;;
+    type: number
+    view_label: "Medians"
+    group_label: "State"
+    value_format_name: percent_1
   }
 
 }

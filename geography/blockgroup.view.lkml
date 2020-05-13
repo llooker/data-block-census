@@ -56,6 +56,14 @@ view: blockgroup {
     hidden: yes
   }
 
+  dimension: block_group_percent_income_spent_on_rent_dim {
+    sql: ${TABLE}.percent_income_spent_on_rent ;;
+    view_label: "Medians"
+    group_label: "Block Group"
+    value_format_name: percent_1
+    hidden: yes
+  }
+
   measure: block_group_median_income {
     sql: MAX(${block_group_median_income_dim}) ;;
     type: number
@@ -86,6 +94,14 @@ view: blockgroup {
     view_label: "Medians"
     group_label: "Block Group"
     value_format_name: usd
+  }
+
+  measure: block_group_percent_income_spent_on_rent {
+    sql: MAX(${block_group_percent_income_spent_on_rent_dim}) ;;
+    type: number
+    view_label: "Medians"
+    group_label: "Block Group"
+    value_format_name: percent_1
   }
 
 }
