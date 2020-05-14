@@ -2,10 +2,9 @@ project_name: "block_acs_census_bigquery"
 
 ################# Constants #################
 
-# constant: CONNECTION_NAME {
-#   value: "bigquery-public"
-#   export: override_required
-# }
+constant: CONNECTION_NAME {
+  value: "bigquery-public"
+}
 
 # constant: SCHEMA_NAME {
 #   value: "looker_app_audit_log"
@@ -19,7 +18,7 @@ project_name: "block_acs_census_bigquery"
 
 constant: CONFIG_PROJECT_NAME {
   value: "block_acs_census_bigquery_config"
-  export: override_required
+  # export: override_required
 }
 
 ################ Dependencies ################
