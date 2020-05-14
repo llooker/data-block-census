@@ -1,12 +1,12 @@
-include: "//@{CONFIG_PROJECT_NAME}/commute.view.lkml" 
-        
-        
+include: "//@{CONFIG_PROJECT_NAME}/views/commute.view.lkml"
+
+
 view: commute {
   extends: [commute_config]
 }
 
 ###################################################
-        
+
 view: commute_core {
   extension: required
 

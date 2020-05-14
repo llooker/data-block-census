@@ -1,12 +1,12 @@
-include: "//@{CONFIG_PROJECT_NAME}/cbsa.view.lkml" 
-        
-        
+include: "//@{CONFIG_PROJECT_NAME}/geography/cbsa.view.lkml"
+
+
 view: cbsa {
   extends: [cbsa_config]
 }
 
 ###################################################
-        
+
 include: "/views/*"
 
 view: cbsa_core {

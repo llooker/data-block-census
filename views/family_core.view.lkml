@@ -1,12 +1,12 @@
-include: "//@{CONFIG_PROJECT_NAME}/family.view.lkml" 
-        
-        
+include: "//@{CONFIG_PROJECT_NAME}/views/family.view.lkml"
+
+
 view: family {
   extends: [family_config]
 }
 
 ###################################################
-        
+
 view: family_core {
   extension: required
 

@@ -1,12 +1,12 @@
-include: "//@{CONFIG_PROJECT_NAME}/education.view.lkml" 
-        
-        
+include: "//@{CONFIG_PROJECT_NAME}/views/education.view.lkml"
+
+
 view: education {
   extends: [education_config]
 }
 
 ###################################################
-        
+
 view: education_core {
   extension: required
 

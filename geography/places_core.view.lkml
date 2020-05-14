@@ -1,12 +1,12 @@
-include: "//@{CONFIG_PROJECT_NAME}/places.view.lkml" 
-        
-        
+include: "//@{CONFIG_PROJECT_NAME}/geography/places.view.lkml"
+
+
 view: places {
   extends: [places_config]
 }
 
 ###################################################
-        
+
 include: "/views/*"
 
 view: places_core {

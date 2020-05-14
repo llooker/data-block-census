@@ -1,12 +1,12 @@
-include: "//@{CONFIG_PROJECT_NAME}/employment.view.lkml" 
-        
-        
+include: "//@{CONFIG_PROJECT_NAME}/views/employment.view.lkml"
+
+
 view: employment {
   extends: [employment_config]
 }
 
 ###################################################
-        
+
 view: employment_core {
   extension: required
 

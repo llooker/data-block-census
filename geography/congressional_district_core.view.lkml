@@ -1,12 +1,12 @@
-include: "//@{CONFIG_PROJECT_NAME}/congressional_district.view.lkml" 
-        
-        
+include: "//@{CONFIG_PROJECT_NAME}/geography/congressional_district.view.lkml"
+
+
 view: congressional_district {
   extends: [congressional_district_config]
 }
 
 ###################################################
-        
+
 include: "/views/*"
 include: "/maps/map_layers.lkml"
 

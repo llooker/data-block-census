@@ -1,12 +1,12 @@
-include: "//@{CONFIG_PROJECT_NAME}/gender.view.lkml" 
-        
-        
+include: "//@{CONFIG_PROJECT_NAME}/views/gender.view.lkml"
+
+
 view: gender {
   extends: [gender_config]
 }
 
 ###################################################
-        
+
 view: gender_core {
   extension: required
 

@@ -1,12 +1,12 @@
-include: "//@{CONFIG_PROJECT_NAME}/puma.view.lkml" 
-        
-        
+include: "//@{CONFIG_PROJECT_NAME}/geography/puma.view.lkml"
+
+
 view: puma {
   extends: [puma_config]
 }
 
 ###################################################
-        
+
 include: "/views/*"
 
 view: puma_core {

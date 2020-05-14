@@ -1,12 +1,12 @@
-include: "//@{CONFIG_PROJECT_NAME}/housing.view.lkml" 
-        
-        
+include: "//@{CONFIG_PROJECT_NAME}/views/housing.view.lkml"
+
+
 view: housing {
   extends: [housing_config]
 }
 
 ###################################################
-        
+
 view: housing_core {
   extension: required
 

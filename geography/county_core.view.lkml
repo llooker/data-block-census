@@ -1,12 +1,12 @@
-include: "//@{CONFIG_PROJECT_NAME}/county.view.lkml" 
-        
-        
+include: "//@{CONFIG_PROJECT_NAME}/geography/county.view.lkml"
+
+
 view: county {
   extends: [county_config]
 }
 
 ###################################################
-        
+
 include: "/views/*"
 
 view: county_core {

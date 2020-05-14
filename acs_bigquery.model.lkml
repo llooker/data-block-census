@@ -1,102 +1,46 @@
 connection: "bigquery-public"
-include: "/geography/*"
+
+include: "/views/*.view.lkml"
+include: "/geography/*.view.lkml"
+include: "*.explore.lkml"
+include: "*.dashboard.lookml"
+include: "//@{CONFIG_PROJECT_NAME}/views/*.view.lkml"
+include: "//@{CONFIG_PROJECT_NAME}/geography/*.view.lkml"
+include: "//@{CONFIG_PROJECT_NAME}/*.model.lkml"
+include: "//@{CONFIG_PROJECT_NAME}/*.dashboard"
 
 explore: acs_census_data {
-  persist_for: "10000 hours"
-  view_name: state
-  label: "ACS Census Data"
-  join: county {
-    sql_on:  ${state.key} = ${county.state_key};;
-    relationship: one_to_many
-  }
-  join: census_tract {
-    sql_on: ${county.county_fips} = ${census_tract.county_key} ;;
-    relationship: one_to_many
-  }
-  join: blockgroup  {
-    sql_on: ${census_tract.census_tract} = ${blockgroup.census_tract_key} ;;
-    relationship: one_to_many
-  }
+  extends: [acs_census_data_config]
 }
 
 explore: congressional_district {
-  persist_for: "10000 hours"
-  always_filter: {filters: {field:state.state_name value:"Please Enter State(s) to Filter By"} }
-  label: "Congressional Districts"
-  join: state {
-    sql_on: ${congressional_district.state_key} = ${state.key} ;;
-    relationship: many_to_one
-  }
+  extends: [congressional_district_config]
 }
 
 explore: school_districts_unified {
-  persist_for: "10000 hours"
-  always_filter: {filters: {field:state.state_name value:"Please Enter State(s) to Filter By"} }
-  label: "Unified School Districts"
-  join: state {
-    sql_on: ${school_districts_unified.state_key} = ${state.key} ;;
-    relationship: many_to_one
-  }
+  extends: [school_districts_unified_config]
 }
 
 explore: school_districts_elementary {
-  persist_for: "10000 hours"
-  always_filter: {filters: {field:state.state_name value:"Please Enter State(s) to Filter By"} }
-  label: "Elementary School Districts"
-  join: state {
-    sql_on: ${school_districts_elementary.state_key} = ${state.key} ;;
-    relationship: many_to_one
-  }
+  extends: [school_districts_elementary_config]
 }
 
 explore: school_districts_secondary {
-  persist_for: "10000 hours"
-  always_filter: {filters: {field:state.state_name value:"Please Enter State(s) to Filter By"} }
-  label: "Secondary School Districts"
-  join: state {
-    sql_on: ${school_districts_secondary.state_key} = ${state.key} ;;
-    relationship: many_to_one
-  }
+  extends: [school_districts_secondary_config]
 }
 
 explore: puma {
-  persist_for: "10000 hours"
-  always_filter: {filters: {field:state.state_name value:"Please Enter State(s) to Filter By"} }
-  label: "Public Use Microdata Areas"
-  join: state {
-    sql_on: ${puma.state_key} = ${state.key} ;;
-    relationship: many_to_one
-  }
-
+  extends: [puma_config]
 }
 
 explore: zcta {
-  persist_for: "10000 hours"
-  always_filter: {filters: {field:state.state_name value:"Please Enter State(s) to Filter By"} }
-  label: "Zip Codes"
-  join: state  {
-    sql_on: ${state.key} = ${zcta.state_key} ;;
-    relationship: many_to_one
-  }
+  extends: [zcta_config]
 }
 
-
 explore: places {
-  persist_for: "10000 hours"
-  always_filter: {filters: {field:state.state_name value:"Please Enter State(s) to Filter By"} }
-  label: "Places"
-  join: state {
-    sql_on: ${places.state_key} = ${state.key} ;;
-    relationship: many_to_one
-  }
+  extends: [places_config]
 }
 
 explore: cbsa {
-  persist_for: "10000 hours"
-  label: "Core-based Statistical Areas"
-  join: state {
-    sql_on: ${cbsa.state_abbreviation} = ${state.state_abbreviation} ;;
-    relationship: many_to_one
-  }
-
+  extends: [cbsa_config]
 }

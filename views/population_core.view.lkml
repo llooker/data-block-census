@@ -1,12 +1,12 @@
-include: "//@{CONFIG_PROJECT_NAME}/population.view.lkml" 
-        
-        
+include: "//@{CONFIG_PROJECT_NAME}/views/population.view.lkml"
+
+
 view: population {
   extends: [population_config]
 }
 
 ###################################################
-        
+
 view: population_core {
   extension: required
 

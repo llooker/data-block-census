@@ -1,5 +1,5 @@
 explore: congressional_district_core {
-  extension: required 
+  extension: required
   persist_for: "10000 hours"
 
 always_filter: {
@@ -14,5 +14,5 @@ join: state {
   sql_on: ${congressional_district.state_key} = ${state.key} ;;
   relationship: many_to_one
 }
- 
+
 }

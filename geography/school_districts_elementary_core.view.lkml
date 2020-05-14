@@ -1,12 +1,12 @@
-include: "//@{CONFIG_PROJECT_NAME}/school_districts_elementary.view.lkml" 
-        
-        
+include: "//@{CONFIG_PROJECT_NAME}/geography/school_districts_elementary.view.lkml"
+
+
 view: school_districts_elementary {
   extends: [school_districts_elementary_config]
 }
 
 ###################################################
-        
+
 include: "/views/*"
 
 view: school_districts_elementary_core {

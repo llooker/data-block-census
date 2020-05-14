@@ -1,12 +1,12 @@
-include: "//@{CONFIG_PROJECT_NAME}/blockgroup.view.lkml" 
-        
-        
+include: "//@{CONFIG_PROJECT_NAME}/geography/blockgroup.view.lkml"
+
+
 view: blockgroup {
   extends: [blockgroup_config]
 }
 
 ###################################################
-        
+
 include: "/views/*"
 
 view: blockgroup_core {

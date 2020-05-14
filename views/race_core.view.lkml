@@ -1,12 +1,12 @@
-include: "//@{CONFIG_PROJECT_NAME}/race.view.lkml" 
-        
-        
+include: "//@{CONFIG_PROJECT_NAME}/views/race.view.lkml"
+
+
 view: race {
   extends: [race_config]
 }
 
 ###################################################
-        
+
 view: race_core {
   extension: required
 

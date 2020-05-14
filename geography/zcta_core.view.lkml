@@ -1,12 +1,12 @@
-include: "//@{CONFIG_PROJECT_NAME}/zcta.view.lkml" 
-        
-        
+include: "//@{CONFIG_PROJECT_NAME}/geography/zcta.view.lkml"
+
+
 view: zcta {
   extends: [zcta_config]
 }
 
 ###################################################
-        
+
 include: "/views/*"
 
 view: zcta_core {

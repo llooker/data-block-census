@@ -1,0 +1,28 @@
+{
+  "label": "ACS Demographic Data",
+  "category_label": "Models",
+  "branding": {
+    "image_uri": "https://marketplace-api.looker.com/block-icons/acs_census_icon.png",
+    "tagline": "Contextualize your person-centered insights with the ACS Demographic Data Block."
+  },
+
+  "constants": {
+    "CONFIG_PROJECT_NAME": {
+      "label": "Config Project Name"
+    }
+  },
+  "models": [
+    {
+      "name": "acs_bigquery",
+      "connection_constant": "CONNECTION_NAME"
+    }
+  ],
+  "auxiliary_projects": [
+    {
+      "git_uri": "git://github.com/looker/block-acs-census-bigquery-config.git",
+      "git_ref": "3a8b91d97b5c9547c54e8206ea25f5a3f62d541c",
+      "label": "ACS Demographic Data Config",
+      "constant_name": "CONFIG_PROJECT_NAME"
+    }
+  ]
+}
