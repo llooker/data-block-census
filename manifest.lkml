@@ -18,7 +18,7 @@ project_name: "acs_census_bigquery"
 # }
 
 constant: CONFIG_PROJECT_NAME {
-  value: "block-census-bureau-acs-bq-config"
+  value: "block-acs-census-bigquery-config"
   export: override_required
 }
 
