@@ -1,4 +1,13 @@
+include: "//@{CONFIG_PROJECT_NAME}/population.view.lkml" 
+        
+        
 view: population {
+  extends: [population_config]
+}
+
+###################################################
+        
+view: population_core {
   extension: required
 
   dimension: pop_16_over_dim {
@@ -49,7 +58,6 @@ view: population {
     view_label: "Population"
     description: "Population in Armed Forces. The number of people in each geography who are members of the U.S. Armed Forces (people on active duty with the United States Army, Air Force, Navy, Marine Corps, or Coast Guard)."
   }
-
 
   measure: total_pop {
     type: sum

@@ -1,4 +1,13 @@
+include: "//@{CONFIG_PROJECT_NAME}/education.view.lkml" 
+        
+        
 view: education {
+  extends: [education_config]
+}
+
+###################################################
+        
+view: education_core {
   extension: required
 
   dimension: one_year_more_college_dim {

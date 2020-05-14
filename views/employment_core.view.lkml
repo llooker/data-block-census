@@ -1,4 +1,13 @@
+include: "//@{CONFIG_PROJECT_NAME}/employment.view.lkml" 
+        
+        
 view: employment {
+  extends: [employment_config]
+}
+
+###################################################
+        
+view: employment_core {
   extension: required
 
   dimension: median_income_dim {
@@ -147,8 +156,6 @@ view: employment {
     description: "Households with income less than $10,000. The number of households in a geographic area whose annual income was less than $10,000."
     hidden: yes
   }
-
-
 
   dimension: civilian_labor_force_dim {
     type: number
@@ -332,7 +339,6 @@ view: employment {
     group_label: "Income Range"
     description: "Households with income less than $10,000. The number of households in a geographic area whose annual income was less than $10,000."
   }
-
 
   measure: civilian_labor_force {
     type: sum

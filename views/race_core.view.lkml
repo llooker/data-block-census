@@ -1,4 +1,13 @@
+include: "//@{CONFIG_PROJECT_NAME}/race.view.lkml" 
+        
+        
 view: race {
+  extends: [race_config]
+}
+
+###################################################
+        
+view: race_core {
   extension: required
 
   dimension: asian_including_hispanic_dim {

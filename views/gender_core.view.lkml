@@ -1,4 +1,13 @@
+include: "//@{CONFIG_PROJECT_NAME}/gender.view.lkml" 
+        
+        
 view: gender {
+  extends: [gender_config]
+}
+
+###################################################
+        
+view: gender_core {
   extension: required
 
   dimension: female_10_to_14_dim {

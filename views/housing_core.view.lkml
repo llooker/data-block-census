@@ -1,4 +1,13 @@
+include: "//@{CONFIG_PROJECT_NAME}/housing.view.lkml" 
+        
+        
 view: housing {
+  extends: [housing_config]
+}
+
+###################################################
+        
+view: housing_core {
   extension: required
 
   dimension: occupied_housing_units_dim {
