@@ -2,7 +2,7 @@ connection: "bigquery-public"
 
 include: "/views/*.view.lkml"
 include: "/geography/*.view.lkml"
-include: "*.explore.lkml"
+include: "/explores/*.explore.lkml"
 include: "*.dashboard.lookml"
 include: "//@{CONFIG_PROJECT_NAME}/views/*.view.lkml"
 include: "//@{CONFIG_PROJECT_NAME}/geography/*.view.lkml"
