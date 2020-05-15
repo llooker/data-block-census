@@ -1,4 +1,4 @@
-connection: "bigquery-public"
+connection: "@{CONNECTION_NAME}"
 
 include: "/views/*.view.lkml"
 include: "/geography/*.view.lkml"

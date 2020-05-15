@@ -9,11 +9,16 @@
   "constants": {
     "CONFIG_PROJECT_NAME": {
       "label": "Config Project Name"
+    },
+    "CONNECTION_NAME": {
+      "label": "Connection Name",
+      "value_constraint": "connection"
     }
   },
   "models": [
     {
-      "name": "acs_bigquery"
+      "name": "acs_bigquery",
+      "connection_constant": "CONNECTION_NAME"
     }
   ],
   "auxiliary_projects": [
