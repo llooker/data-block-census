@@ -6,19 +6,9 @@ constant: CONNECTION_NAME {
   value: "bigquery-public"
 }
 
-# constant: SCHEMA_NAME {
-#   value: "looker_app_audit_log"
-#   export: override_required
-# }
-
-# constant: AUDIT_LOG_EXPORT_TABLE_NAME {
-#   value: "cloudaudit_googleapis_com_data_access_*"
-#   export: override_required
-# }
-
 constant: CONFIG_PROJECT_NAME {
   value: "block_acs_census_bigquery_config"
-  # export: override_required
+  export: override_optional
 }
 
 ################ Dependencies ################
