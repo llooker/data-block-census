@@ -13,8 +13,7 @@
   },
   "models": [
     {
-      "name": "acs_bigquery",
-      "connection_constant": "CONNECTION_NAME"
+      "name": "acs_bigquery"
     }
   ],
   "auxiliary_projects": [
