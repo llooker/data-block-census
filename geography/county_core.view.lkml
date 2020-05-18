@@ -56,7 +56,7 @@ view: county_core {
   }
 
   dimension: county_percent_income_spent_on_rent_dim {
-    sql: ${TABLE}.percent_income_spent_on_rent ;;
+    sql: ${TABLE}.percent_income_spent_on_rent  / 100 ;;
     view_label: "Medians"
     group_label: "County"
     value_format_name: percent_1
