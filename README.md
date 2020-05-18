@@ -1,26 +1,25 @@
 # ACS Demographic Data Block
 
 
-The U.S. Census Bureau’s [American Community Survey (ACS)](https://www.census.gov/programs-surveys/acs) is an annual nationwide survey that collects and produces information on social, economic, housing, and demographic characteristics in the U.S. This Data Block is based on a [publically available dataset hosted in Google BigQuery](https://console.cloud.google.com/marketplace/details/united-states-census-bureau/acs?id=1282ab4c-78a4-4da5-8af8-cd693fe390ab) as part of the [Google Cloud Public Datasets Program](https://cloud.google.com/public-datasets?_ga=2.233975447.-840160752.1587661252). Here we reference the most recent [5 year estimates](https://www.census.gov/programs-surveys/acs/guidance/estimates.html) for each geographic region currently available in BigQuery.
+The U.S. Census Bureau’s [American Community Survey (ACS)](https://www.census.gov/programs-surveys/acs) is an annual nationwide survey that collects and produces information on social, economic, housing, and demographic characteristics in the U.S. This Data Block is based on a [publicly available dataset hosted in Google BigQuery](https://console.cloud.google.com/marketplace/details/united-states-census-bureau/acs?id=1282ab4c-78a4-4da5-8af8-cd693fe390ab) as part of the [Google Cloud Public Datasets Program](https://cloud.google.com/public-datasets?_ga=2.233975447.-840160752.1587661252). Here we reference the most recent [5 year estimates](https://www.census.gov/programs-surveys/acs/guidance/estimates.html) for each geographic region currently available in BigQuery.
 
-You'll find two types of view files in this Data Block: those related to geography (in the `geography` folder) and those that group fields into categories like `employment` and `population` (in the `views` folder). The Census Bureau designates  `GEOID` identifiers for each geographic region which allow the `geographic` views to be joined via their respective `geo_id` field. An effort has been made here to join `geography` views based on this `GEOID` for the premade explores. These serve as a good example on how to join the `geography` views together elsewhere.
+You'll find two types of view files in this Data Block: those related to geography (in the `geography` folder) and those that group fields into categories like `employment` and `population` (in the `views` folder). The Census Bureau designates  `GEOID` identifiers for each geographic region. `GEOID`s are hierarchical allowing the `geographic` views to be joined via their respective `geo_id` fields to more granular levels. The premade explores included in the Data Block have already been joined in such a way.
 
-
-- **Please refer to [this link](https://www.census.gov/programs-surveys/geography/guidance/geo-identifiers.html) for more detail regarding `GEOID` designation**
+**Please refer to [this link](https://www.census.gov/programs-surveys/geography/guidance/geo-identifiers.html) for more detail regarding `GEOID` designations.**
 
 
 ### Importing ACS Data into other Projects
 Views and explores from this Data Block can be brought into your other projects by using [project import](https://docs.looker.com/data-modeling/learning-lookml/importing-projects) via [extends](https://docs.looker.com/data-modeling/learning-lookml/extends) or [refinements](https://docs.looker.com/data-modeling/learning-lookml/refinements) syntax.
 
-If using `state`, `county` or `census_tract` geographies without joining to the `block_group` level you'll need to also include the categories of interest from the `views` folder.
+If using `state`, `county` or `census_tract` geographies without joining to the `block_group` level you'll need to also include the fields of interest from the `views` folder.
 
-All other geographic regions: `school_districts_*`, `cbsa`, `places`, `puma`, `congressional_district` and `zcta` include measures when imported and can be joined to `state` using the `state_key` field -- no additional `view` declerations are required -- simply import and join to an explore. Refer to the example below to help you get started.
+All other geographic regions: `school_districts_*`, `cbsa`, `places`, `puma`, `congressional_district` and `zcta` include fields when imported and can be joined to `state` using the `state_key` field -- no additional `view` declarations are required -- simply import and join to an explore. Refer to the example below to help you get started.
 
 
 #### Project Import Example
-Imagine we have a project with an `orders` explore which we join to an `address` view that just happens to have a `county_fips` field (lucky us). We're interested in learning more about the of level of education and employment status for the populations of a few counties and decide to import view files from this Data Block.
+Imagine we have a project with an `orders` explore which we join to an `address` view that just happens to have a `county_fips` field (lucky us). We're interested in learning more about the of level of education and income for the populations of a few counties and decide to incorporate this Data Block into our original project.
 
-The orignal explore looks like this:
+The original explore looks like this:
 
 ```
 explore: orders {
@@ -38,7 +37,9 @@ include: "//marketplace_block_acs_census_bigquery/geography/*"
 include: "//marketplace_block_acs_census_bigquery/views/*"
 ```
 
-Now, since we're only interested in `county` level granularity (so we are not including the most granular `block_group` geography in this project) we'll need to also select the types of categories we're interested in by creating a quick one-off view that extends the relavent fields and populates the `county` geography layer with measures. We'll use that view to join everything together in the existing explore. It'll look something like this when we're done:
+Since we're only interested in `county` level granularity (so we are not including the most granular `block_group` geography in this project) we'll need to also select the types of fields we're interested in having access to. We can add fields to the imported `county` view by creating an additional view that extends both the relevant fields and the base `county` geography layer. We'll use that view to join everything together in the existing explore.
+
+It'll look something like this when we're done:
 
 
 
@@ -70,7 +71,7 @@ view: county_education_employment {
 ```
 
 
-Now imagine we simply Zip Code Tabulation Areas(ZCTA). In that case we'd have something like:
+Now imagine we'd simply want Zip Code Tabulation Areas (ZCTA) granularity. Since ZCATs are terminal nodes in the [`GEOID` hierarchy](https://www2.census.gov/geo/pdfs/reference/geodiagram.pdf?#) we know that fields are already included in the imported view so we could simply have something like:
 
 ```
 include: "//marketplace_block_acs_census_bigquery/geography/*"
