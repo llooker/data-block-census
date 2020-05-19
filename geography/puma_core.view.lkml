@@ -8,6 +8,7 @@ view: puma {
 ###################################################
 
 include: "/views/*"
+include: "/maps/*"
 
 view: puma_core {
   extends: [
@@ -27,6 +28,7 @@ view: puma_core {
     sql: ${TABLE}.geo_id ;;
     primary_key: yes
     view_label: "Geography"
+    map_layer_name: puma_2010_census
   }
 
   dimension: state_key {

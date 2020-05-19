@@ -1,4 +1,3 @@
-
 map_layer: congressional_districts {
   label: "116th Congressional Districts (2019)"
   url: "https://a.tiles.mapbox.com/v4/wilg-looker.116congress/{z}/{x}/{y}.mvt?access_token=pk.eyJ1Ijoid2lsZy1sb29rZXIiLCJhIjoiY2thODlhOWZzMDJuaTJ5cWY5ajFqd2dmNyJ9.fLkuVq37jY-yQtj7PsYdsw"
@@ -20,6 +19,7 @@ map_layer: block_group {
   property_key: "GEOID"
 }
 
+#Source: https://console.cloud.google.com/marketplace/details/united-states-census-bureau/us-geographic-boundaries
 map_layer: places {
   format: "vector_tile_region"
   url: "https://api.mapbox.com/v4/wilg-looker.2uazcx7q/{z}/{x}/{y}.mvt?access_token=pk.eyJ1Ijoid2lsZy1sb29rZXIiLCJhIjoiY2thODlhOWZzMDJuaTJ5cWY5ajFqd2dmNyJ9.fLkuVq37jY-yQtj7PsYdsw"
@@ -40,7 +40,7 @@ map_layer: school_districts {
   extents_json_url: "https://gist.githubusercontent.com/noahamac/1fe36924e07c33f7bae7e2a6cdfd0420/raw/02fb0747d4b406f8821bfc68b330d06c308b233e/school_extents.json"
 }
 
-
+#Source: https://catalog.data.gov/dataset/tiger-line-shapefile-2019-nation-u-s-current-metropolitan-statistical-area-micropolitan-statist
 map_layer: cbsa_2018 {
   format: "vector_tile_region"
   url: "https://api.mapbox.com/v4/wilg-looker.68ohd17n/{z}/{x}/{y}.mvt?access_token=pk.eyJ1Ijoid2lsZy1sb29rZXIiLCJhIjoiY2thODlhOWZzMDJuaTJ5cWY5ajFqd2dmNyJ9.fLkuVq37jY-yQtj7PsYdsw"
@@ -49,4 +49,15 @@ map_layer: cbsa_2018 {
   property_key: "GEOID"
   min_zoom_level: 4
   max_zoom_level: 11
+}
+
+#Source: https://www.census.gov/geographies/reference-maps/2010/geo/2010-pumas.html
+map_layer: puma_2010_census {
+  format: "vector_tile_region"
+  url: "https://api.mapbox.com/v4/wilg-looker.arxrd968/{z}/{x}/{y}.mvt?access_token=pk.eyJ1Ijoid2lsZy1sb29rZXIiLCJhIjoiY2thODlhOWZzMDJuaTJ5cWY5ajFqd2dmNyJ9.fLkuVq37jY-yQtj7PsYdsw"
+  extents_json_url: "https://gistcdn.githack.com/thomasbanghart/3ef5c9a3ed3d52f8c726ee9bbc857118/raw/610e075f587d6602d028f8e74bf27817e27852ef/puma_extents.json"
+  feature_key: "puma_2019-cgeycr"
+  property_key: "GEOID10"
+  min_zoom_level: 4
+  max_zoom_level: 10
 }
