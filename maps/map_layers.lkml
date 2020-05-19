@@ -15,6 +15,7 @@ map_layer: places {
   extents_json_url: "https://gistcdn.githack.com/thomasbanghart/986ea1cb7ca563a4d56779205cae095c/raw/a20271f4f5b827f9200b64a60bd2d1ae1501ce7a/places_extents.json"
   feature_key: "places_map-9mbguy"
   property_key: "GEOID"
+  min_zoom_level: 4
   max_zoom_level: 10
 }
 
@@ -25,5 +26,6 @@ map_layer: cbsa_2018 {
   extents_json_url: "https://gistcdn.githack.com/thomasbanghart/db2a0bd28ad445e745e038d1b40312ee/raw/d4826c5aef28ab67d9661e916535bd4df132e196/extents_cbsa.json"
   feature_key: "cbsa_2019-9h1x3k"
   property_key: "GEOID"
+  min_zoom_level: 4
   max_zoom_level: 11
 }
