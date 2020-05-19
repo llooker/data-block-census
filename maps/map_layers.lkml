@@ -22,10 +22,11 @@ map_layer: block_group {
 #Source: https://console.cloud.google.com/marketplace/details/united-states-census-bureau/us-geographic-boundaries
 map_layer: places {
   format: "vector_tile_region"
+  feature_key: "places_map-9mbguy"
   url: "https://api.mapbox.com/v4/wilg-looker.2uazcx7q/{z}/{x}/{y}.mvt?access_token=pk.eyJ1Ijoid2lsZy1sb29rZXIiLCJhIjoiY2thODlhOWZzMDJuaTJ5cWY5ajFqd2dmNyJ9.fLkuVq37jY-yQtj7PsYdsw"
   extents_json_url: "https://gistcdn.githack.com/thomasbanghart/986ea1cb7ca563a4d56779205cae095c/raw/a20271f4f5b827f9200b64a60bd2d1ae1501ce7a/places_extents.json"
   property_key: "GEOID"
-  min_zoom_level: 4
+  min_zoom_level: 5
   max_zoom_level: 10
 }
 
