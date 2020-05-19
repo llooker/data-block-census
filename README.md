@@ -47,6 +47,11 @@ It'll look something like this when we're done:
 include: "//marketplace_block_acs_census_bigquery/geography/*"
 include: "//marketplace_block_acs_census_bigquery/views/*"
 
+#Since we're not importing the block_group level, we'll populate the county level with measures
+view: county_education_employment {
+  extends: [county, education, employment]
+}
+
 explore: orders {
   join: address {
     sql_on: ${orders.address_id} = ${address.id}
@@ -61,11 +66,6 @@ explore: orders {
   join: state {
     sql_on: ${county_education_employment.state_key} = ${state.key}
   }
-}
-
-#Since we're not importing the block_group level, we'll populate the county level with measures
-view: county_education_employment {
-  extends: [county, education, employment]
 }
 
 ```

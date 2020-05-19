@@ -1,18 +1,11 @@
 explore: puma_core {
-  extension: required 
+  extension: required
   persist_for: "10000 hours"
+  label: "Public Use Microdata Areas"
 
-always_filter: {
-  filters: {
-    field: state.state_name
-    value: "Please Enter State(s) to Filter By"
+  join: state {
+    sql_on: ${puma.state_key} = ${state.key} ;;
+    relationship: many_to_one
   }
-}
-label: "Public Use Microdata Areas"
 
-join: state {
-  sql_on: ${puma.state_key} = ${state.key} ;;
-  relationship: many_to_one
-}
- 
 }

@@ -3,9 +3,9 @@ explore: places_core {
   persist_for: "10000 hours"
   label: "Places"
 
-join: state {
-  sql_on: ${places.state_key} = ${state.key} ;;
-  relationship: many_to_one
-}
+  join: state {
+    sql_on: ${places.state_key} = ${state.key} ;;
+    relationship: many_to_one
+  }
 
 }

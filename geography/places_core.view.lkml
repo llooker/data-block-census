@@ -41,7 +41,6 @@ view: places_core {
     view_label: "Geography"
     group_label: "Place"
     map_layer_name: places
-    html: {{ place_name._value }} ;;
   }
 
   dimension: state_key {
@@ -51,11 +50,11 @@ view: places_core {
 
   dimension: place_name {
     sql: ${TABLE}.place_name ;;
-    description: "Use me to filter"
+    view_label: "Geography"
+    group_label: "Place"
   }
 
   dimension: place_full_name {
-    hidden: yes
     sql: ${TABLE}.place_full_name ;;
     view_label: "Geography"
     group_label: "Place"

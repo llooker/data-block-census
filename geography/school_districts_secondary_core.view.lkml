@@ -30,6 +30,6 @@ view: school_districts_secondary_core {
 
   dimension: state_key {
     sql: SUBSTR(CAST(${TABLE}.geo_id as STRING), 0, 2) ;;
-    hidden: yes
+    #hidden: yes
   }
 }

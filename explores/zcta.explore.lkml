@@ -1,18 +1,11 @@
 explore: zcta_core {
-  extension: required 
+  extension: required
   persist_for: "10000 hours"
+  label: "Zip Codes"
 
-always_filter: {
-  filters: {
-    field: state.state_name
-    value: "Please Enter State(s) to Filter By"
+  join: state {
+    sql_on: ${state.key} = ${zcta.state_key} ;;
+    relationship: many_to_one
   }
-}
-label: "Zip Codes"
 
-join: state {
-  sql_on: ${state.key} = ${zcta.state_key} ;;
-  relationship: many_to_one
-}
- 
 }
