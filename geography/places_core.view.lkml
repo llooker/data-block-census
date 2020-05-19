@@ -8,6 +8,7 @@ view: places {
 ###################################################
 
 include: "/views/*"
+include: "/maps/*"
 
 view: places_core {
   extends: [
@@ -34,11 +35,13 @@ view: places_core {
     persist_for: "10000 hours"
   }
 
-  dimension: place_id {
-    sql: ${TABLE}.place_id ;;
+  dimension: place {
+    sql: CAST(${TABLE}.place_id as STRING) ;;
     primary_key: yes
     view_label: "Geography"
     group_label: "Place"
+    map_layer_name: places
+    html: {{ place_name._value }} ;;
   }
 
   dimension: state_key {
@@ -48,8 +51,7 @@ view: places_core {
 
   dimension: place_name {
     sql: ${TABLE}.place_name ;;
-    view_label: "Geography"
-    group_label: "Place"
+    hidden: yes
   }
 
   dimension: place_full_name {

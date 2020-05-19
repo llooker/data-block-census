@@ -8,6 +8,7 @@ view: blockgroup {
 ###################################################
 
 include: "/views/*"
+include: "/maps/*"
 
 view: blockgroup_core {
   extends: [
@@ -26,6 +27,7 @@ view: blockgroup_core {
     primary_key: yes
     view_label: "Geography"
     sql: ${TABLE}.geo_id ;;
+    map_layer_name: block_group
   }
 
   dimension: county_key {
@@ -81,7 +83,7 @@ view: blockgroup_core {
   }
 
   dimension: block_group_percent_income_spent_on_rent_dim {
-    sql: ${TABLE}.percent_income_spent_on_rent ;;
+    sql: ${TABLE}.percent_income_spent_on_rent  / 100 ;;
     view_label: "Medians"
     group_label: "Block Group"
     value_format_name: percent_1

@@ -8,6 +8,7 @@ view: cbsa {
 ###################################################
 
 include: "/views/*"
+include: "/maps/*"
 
 view: cbsa_core {
   extends: [
@@ -37,6 +38,7 @@ view: cbsa_core {
     group_label: "CBSA"
     primary_key: yes
     sql: ${TABLE}.geo_id ;;
+    map_layer_name: cbsa_2018
   }
 
   dimension: state_abbreviation {
@@ -98,7 +100,7 @@ view: cbsa_core {
   }
 
   dimension: cbsa_percent_income_spent_on_rent_dim {
-    sql: ${TABLE}.percent_income_spent_on_rent ;;
+    sql: ${TABLE}.percent_income_spent_on_rent / 100 ;;
     view_label: "Medians"
     group_label: "CBSA"
     value_format_name: percent_1
