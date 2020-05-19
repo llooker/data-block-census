@@ -13,7 +13,7 @@ Views and explores from this Data Block can be brought into your other projects 
 
 If using `state`, `county` or `census_tract` geographies without joining to the `block_group` level you'll need to also include the fields of interest from the `views` folder.
 
-All other geographic regions: `school_districts_*`, `cbsa`, `places`, `puma`, `congressional_district` and `zcta` include fields when imported and can be joined to `state` using the `state_key` field -- no additional `view` declarations are required -- simply import and join to an explore. Refer to the example below to help you get started.
+All other geographic regions: `school_districts_*`, `block_group`, `cbsa`, `places`, `puma`, `congressional_district` and `zcta` include fields when imported and can be joined to `state` using the `state_key` field -- no additional `view` declarations are required -- simply import and join to an explore. Refer to the example below to help you get started.
 
 
 #### Project Import Example
