@@ -26,6 +26,7 @@ view: school_districts_secondary_core {
     sql: ${TABLE}.geo_id ;;
     primary_key: yes
     view_label: "Geography"
+    map_layer_name: school_districts
   }
 
   dimension: state_key {
