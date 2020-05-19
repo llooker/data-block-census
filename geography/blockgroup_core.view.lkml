@@ -8,6 +8,7 @@ view: blockgroup {
 ###################################################
 
 include: "/views/*"
+include: "/maps/*"
 
 view: blockgroup_core {
   extends: [
@@ -26,6 +27,7 @@ view: blockgroup_core {
     primary_key: yes
     view_label: "Geography"
     sql: ${TABLE}.geo_id ;;
+    map_layer_name: block_group
   }
 
   dimension: county_key {
