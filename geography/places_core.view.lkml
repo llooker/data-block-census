@@ -51,10 +51,11 @@ view: places_core {
 
   dimension: place_name {
     sql: ${TABLE}.place_name ;;
-    hidden: yes
+    description: "Use me to filter"
   }
 
   dimension: place_full_name {
+    hidden: yes
     sql: ${TABLE}.place_full_name ;;
     view_label: "Geography"
     group_label: "Place"
