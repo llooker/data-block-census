@@ -1,3 +1,4 @@
+# Source: https://catalog.data.gov/dataset/tiger-line-shapefile-2018-nation-u-s-116th-congressional-district-national
 map_layer: congressional_districts {
   label: "116th Congressional Districts (2019)"
   url: "https://a.tiles.mapbox.com/v4/wilg-looker.116congress/{z}/{x}/{y}.mvt?access_token=pk.eyJ1Ijoid2lsZy1sb29rZXIiLCJhIjoiY2thODlhOWZzMDJuaTJ5cWY5ajFqd2dmNyJ9.fLkuVq37jY-yQtj7PsYdsw"
@@ -30,6 +31,7 @@ map_layer: places {
   max_zoom_level: 10
 }
 
+# Source: https://nces.ed.gov/programs/edge/Geographic/DistrictBoundaries
 map_layer: school_districts {
   format: "vector_tile_region"
   url: "https://api.mapbox.com/v4/wilg-looker.2019schools/{z}/{x}/{y}.mvt?access_token=pk.eyJ1Ijoid2lsZy1sb29rZXIiLCJhIjoiY2thODlhOWZzMDJuaTJ5cWY5ajFqd2dmNyJ9.fLkuVq37jY-yQtj7PsYdsw"
