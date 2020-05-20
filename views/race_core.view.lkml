@@ -10,20 +10,6 @@ view: race {
 view: race_core {
   extension: required
 
-  dimension: asian_including_hispanic_dim {
-    type: number
-    sql: ${TABLE}.asian_including_hispanic ;;
-    description: "Asian including Hispanic"
-    hidden: yes
-  }
-
-  dimension: amerindian_including_hispanic_dim {
-    type: number
-    sql: ${TABLE}.amerindian_including_hispanic ;;
-    description: "American Indian including Hispanic"
-    hidden: yes
-  }
-
   dimension: amerindian_pop_dim {
     type: number
     sql: ${TABLE}.amerindian_pop ;;
@@ -35,13 +21,6 @@ view: race_core {
     type: number
     sql: ${TABLE}.asian_pop ;;
     description: "Asian Population. The number of people identifying as Asian, non-Hispanic in each geography."
-    hidden: yes
-  }
-
-  dimension: black_including_hispanic_dim {
-    type: number
-    sql: ${TABLE}.black_including_hispanic ;;
-    description: "Black including Hispanic"
     hidden: yes
   }
 
@@ -73,13 +52,6 @@ view: race_core {
     hidden: yes
   }
 
-  dimension: white_including_hispanic_dim {
-    type: number
-    sql: ${TABLE}.white_including_hispanic ;;
-    description: "White including Hispanic"
-    hidden: yes
-  }
-
   dimension: other_race_pop_dim {
     type: number
     sql: ${TABLE}.other_race_pop ;;
@@ -92,22 +64,6 @@ view: race_core {
     sql: ${TABLE}.two_or_more_races_pop ;;
     description: "Two or more races population. The number of people identifying as two or more races in each geography"
     hidden: yes
-  }
-
-  measure: asian_including_hispanic {
-    type: sum
-    sql: ${asian_including_hispanic_dim} ;;
-    view_label: "Race"
-    group_label: "Asian"
-    description: "Asian including Hispanic"
-  }
-
-  measure: amerindian_including_hispanic {
-    type: sum
-    sql: ${amerindian_including_hispanic_dim} ;;
-    view_label: "Race"
-    group_label: "Amerindian"
-    description: "American Indian including Hispanic"
   }
 
   measure: amerindian_pop {
@@ -124,14 +80,6 @@ view: race_core {
     view_label: "Race"
     group_label: "Asian"
     description: "Asian Population. The number of people identifying as Asian, non-Hispanic in each geography."
-  }
-
-  measure: black_including_hispanic {
-    type: sum
-    sql: ${black_including_hispanic_dim} ;;
-    view_label: "Race"
-    group_label: "Black"
-    description: "Black including Hispanic"
   }
 
   measure: black_pop {
@@ -164,14 +112,6 @@ view: race_core {
     view_label: "Race"
     group_label: "White"
     description: "White Population. The number of people identifying as white, non-Hispanic in each geography."
-  }
-
-  measure: white_including_hispanic {
-    type: sum
-    sql: ${white_including_hispanic_dim} ;;
-    view_label: "Race"
-    group_label: "White"
-    description: "White including Hispanic"
   }
 
   measure: other_race_pop {
