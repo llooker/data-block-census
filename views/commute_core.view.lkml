@@ -218,7 +218,7 @@ view: commute_core {
   }
 
   measure: commute_5_9_mins {
-    label: "5-9 min"
+    label: " 5-9 min"
     type: sum
     sql: ${commute_5_9_mins_dim} ;;
     view_label: "Commute"
@@ -227,7 +227,7 @@ view: commute_core {
   }
 
   measure: commute_60_89_mins {
-    label: "60-89 min"
+    label: " 60-89 min"
     type: sum
     sql: ${commute_60_89_mins_dim} ;;
     view_label: "Commute"
@@ -254,7 +254,7 @@ view: commute_core {
   }
 
   measure: commute_less_10_mins {
-    label: "Less than 10 min"
+    label: "  Less than 10 min"
     type: sum
     sql: ${commute_less_10_mins_dim} ;;
     view_label: "Commute"

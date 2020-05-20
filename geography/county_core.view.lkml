@@ -24,17 +24,17 @@ view: county_core {
   }
 
   dimension: county_fips {
-    label: "County"
     primary_key: yes
     sql: ${TABLE}.county_fips ;;
     view_label: "Geography"
+    group_label: "County"
     map_layer_name: us_counties_fips
-    html: {{ county_name._value }}  ;;
   }
 
   dimension: county_name {
     sql: ${TABLE}.county_name ;;
-    hidden: yes
+    view_label: "Geography"
+    group_label: "County"
   }
 
   dimension: state_key {
@@ -139,6 +139,7 @@ view: county_core {
     view_label: "Income Per Capita"
     group_label: "County"
     description: "Per Capita Income in the past 12 Months. Per capita income is the mean income computed for every man, woman, and child in a particular group. It is derived by dividing the total income of a particular group by the total population."
+    value_format_name: usd
   }
 
   measure: county_percent_income_spent_on_rent {
