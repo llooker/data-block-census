@@ -13,7 +13,7 @@ Views and explores from this Data Block can be brought into your other projects 
 
 If using `state`, `county` or `census_tract` geographies without joining to the `block_group` level you'll need to also include the fields of interest from the `views` folder.
 
-All other geographic regions: `school_districts_*`, `cbsa`, `places`, `puma`, `congressional_district` and `zcta` include fields when imported and can be joined to `state` using the `state_key` field -- no additional `view` declarations are required -- simply import and join to an explore. Refer to the example below to help you get started.
+All other geographic regions: `school_districts_*`, `block_group`, `cbsa`, `places`, `puma`, `congressional_district` and `zcta` include fields when imported and can be joined to `state` using the `state_key` field -- no additional `view` declarations are required -- simply import and join to an explore. Refer to the example below to help you get started.
 
 
 #### Project Import Example
@@ -47,6 +47,11 @@ It'll look something like this when we're done:
 include: "//marketplace_block_acs_census_bigquery/geography/*"
 include: "//marketplace_block_acs_census_bigquery/views/*"
 
+#Since we're not importing the block_group level, we'll populate the county level with measures
+view: county_education_employment {
+  extends: [county, education, employment]
+}
+
 explore: orders {
   join: address {
     sql_on: ${orders.address_id} = ${address.id}
@@ -61,11 +66,6 @@ explore: orders {
   join: state {
     sql_on: ${county_education_employment.state_key} = ${state.key}
   }
-}
-
-#Since we're not importing the block_group level, we'll populate the county level with measures
-view: county_education_employment {
-  extends: [county, education, employment]
 }
 
 ```

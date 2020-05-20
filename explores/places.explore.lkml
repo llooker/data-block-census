@@ -1,18 +1,11 @@
 explore: places_core {
-  extension: required 
+  extension: required
   persist_for: "10000 hours"
+  label: "Places"
 
-always_filter: {
-  filters: {
-    field: state.state_name
-    value: "Please Enter State(s) to Filter By"
+  join: state {
+    sql_on: ${places.state_key} = ${state.key} ;;
+    relationship: many_to_one
   }
-}
-label: "Places"
 
-join: state {
-  sql_on: ${places.state_key} = ${state.key} ;;
-  relationship: many_to_one
-}
- 
 }

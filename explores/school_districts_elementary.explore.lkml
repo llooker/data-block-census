@@ -1,18 +1,11 @@
 explore: school_districts_elementary_core {
-  extension: required 
+  extension: required
   persist_for: "10000 hours"
+  label: "Elementary School Districts"
 
-always_filter: {
-  filters: {
-    field: state.state_name
-    value: "Please Enter State(s) to Filter By"
+  join: state {
+    sql_on: ${school_districts_elementary.state_key} = ${state.key} ;;
+    relationship: many_to_one
   }
-}
-label: "Elementary School Districts"
 
-join: state {
-  sql_on: ${school_districts_elementary.state_key} = ${state.key} ;;
-  relationship: many_to_one
-}
- 
 }
