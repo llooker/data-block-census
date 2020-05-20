@@ -489,8 +489,8 @@
     col: 19
     width: 5
     height: 10
-  - title: Employed Vs. Unemployed Population By State
-    name: Employed Vs. Unemployed Population By State
+  - title: Employed Vs Unemployed Population By State
+    name: Employed Vs Unemployed Population By State
     model: acs_bigquery
     explore: acs_census_data
     type: looker_column
@@ -538,8 +538,8 @@
     col: 12
     width: 12
     height: 9
-  - title: Commute Time Vs. Median Income By County
-    name: Commute Time Vs. Median Income By County
+  - title: Commute Time Vs Median Income By County
+    name: Commute Time Vs Median Income By County
     model: acs_bigquery
     explore: acs_census_data
     type: looker_scatter
