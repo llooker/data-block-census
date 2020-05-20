@@ -115,13 +115,6 @@ view: housing_core {
     hidden: yes
   }
 
-  dimension: households_retirement_income_dim {
-    type: number
-    sql: ${TABLE}.households_retirement_income ;;
-    description: "Households receiving retirement income"
-    hidden: yes
-  }
-
   dimension: vacant_housing_units_dim {
     type: number
     sql: ${TABLE}.vacant_housing_units ;;
@@ -307,6 +300,7 @@ view: housing_core {
   }
 
   measure: dwellings_1_units_attached {
+    label: " Dwellings 1 Units Attached"
     type: sum
     sql: ${dwellings_1_units_attached_dim} ;;
     view_label: "Housing"
@@ -315,6 +309,7 @@ view: housing_core {
   }
 
   measure: dwellings_1_units_detached {
+    label: " Dwellings 1 Units Detached"
     type: sum
     sql: ${dwellings_1_units_detached_dim} ;;
     view_label: "Housing"
@@ -331,6 +326,7 @@ view: housing_core {
   }
 
   measure: dwellings_2_units {
+    label: " Dwellings 2 Units"
     type: sum
     sql: ${dwellings_2_units_dim} ;;
     view_label: "Housing"
@@ -339,6 +335,7 @@ view: housing_core {
   }
 
   measure: dwellings_3_to_4_units {
+    label: " Dwellings 3 to 4 Units"
     type: sum
     sql: ${dwellings_3_to_4_units_dim} ;;
     view_label: "Housing"
@@ -355,6 +352,7 @@ view: housing_core {
   }
 
   measure: dwellings_5_to_9_units {
+    label: " Dwellings 5 to 9 Units"
     type: sum
     sql: ${dwellings_5_to_9_units_dim} ;;
     view_label: "Housing"
@@ -408,14 +406,6 @@ view: housing_core {
     view_label: "Housing"
     group_label: "Households"
     description: "Households. A count of the number of households in each geography. A household consists of one or more people who live in the same dwelling and also share at meals or living accommodation, and may consist of a single family or some other grouping of people. "
-  }
-
-  measure: households_retirement_income {
-    type: sum
-    sql: ${households_retirement_income_dim} ;;
-    view_label: "Housing"
-    group_label: "Households"
-    description: "Households receiving retirement income"
   }
 
   measure: vacant_housing_units {
@@ -522,6 +512,7 @@ view: housing_core {
   }
 
   measure: rent_burden_not_computed {
+    label: "  Rent Burden Not Computed"
     type: sum
     sql: ${rent_burden_not_computed_dim} ;;
     view_label: "Housing"
@@ -530,6 +521,7 @@ view: housing_core {
   }
 
   measure: rent_over_50_percent {
+    label: "Rent Over 50 percent"
     type: sum
     sql: ${rent_over_50_percent_dim} ;;
     view_label: "Housing"
@@ -538,6 +530,7 @@ view: housing_core {
   }
 
   measure: rent_under_10_percent {
+    label: " Rent Under 10 percent"
     type: sum
     sql: ${rent_under_10_percent_dim} ;;
     view_label: "Housing"

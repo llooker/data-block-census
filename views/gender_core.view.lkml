@@ -466,7 +466,7 @@ view: gender_core {
   }
 
   measure: female_5_to_9 {
-    label: "Age 5-9"
+    label: " Age 5-9"
     type: sum
     sql: ${female_5_to_9_dim} ;;
     view_label: "Gender"
@@ -556,7 +556,7 @@ view: gender_core {
   }
 
   measure: female_under_5 {
-    label: "Age under 5"
+    label: "  Age under 5"
     type: sum
     sql: ${female_under_5_dim} ;;
     view_label: "Gender"
@@ -682,7 +682,7 @@ view: gender_core {
   }
 
   measure: male_5_to_9 {
-    label: "Age 5-9"
+    label: " Age 5-9"
     type: sum
     sql: ${male_5_to_9_dim} ;;
     view_label: "Gender"
@@ -772,7 +772,7 @@ view: gender_core {
   }
 
   measure: male_under_5 {
-    label: "Age under 5"
+    label: "  Age under 5"
     type: sum
     sql: ${male_under_5_dim} ;;
     view_label: "Gender"
