@@ -3,6 +3,7 @@ map_layer: congressional_districts {
   label: "116th Congressional Districts (2019)"
   url: "https://a.tiles.mapbox.com/v4/wilg-looker.116congress/{z}/{x}/{y}.mvt?access_token=pk.eyJ1Ijoid2lsZy1sb29rZXIiLCJhIjoiY2thODlhOWZzMDJuaTJ5cWY5ajFqd2dmNyJ9.fLkuVq37jY-yQtj7PsYdsw"
   format: "vector_tile_region"
+  extents_json_url: "https://gist.githubusercontent.com/noahamac/a852cf4934bf32cba1307b149a53d6a7/raw/6a363a6e086124fc0b63a4ed2524b2c508407c71/congress_extents.json"
   min_zoom_level: 0
   max_zoom_level: 12
   property_key: "GEOID"
