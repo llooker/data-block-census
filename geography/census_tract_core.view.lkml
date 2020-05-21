@@ -14,6 +14,7 @@ view: census_tract_core {
     primary_key: yes
     sql: ${TABLE}.geo_id ;;
     view_label: "Geography"
+    map_layer_name: census_tracts
   }
 
   dimension: county_key {

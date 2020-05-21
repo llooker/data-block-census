@@ -64,3 +64,14 @@ map_layer: puma_2010_census {
   min_zoom_level: 0
   max_zoom_level: 10
 }
+
+#Source: BigQuery Geo data `bigquery-public-data.geo_census_tracts.census_tracts_*`
+map_layer: census_tracts {
+  format: "vector_tile_region"
+  url: "https://api.mapbox.com/v4/wilg-looker.2018tracts/{z}/{x}/{y}.mvt?access_token=pk.eyJ1Ijoid2lsZy1sb29rZXIiLCJhIjoiY2thODlhOWZzMDJuaTJ5cWY5ajFqd2dmNyJ9.fLkuVq37jY-yQtj7PsYdsw"
+  extents_json_url: "https://gistcdn.githack.com/jeffrey-martinez/73478e171276da38c1114551cc9c9903/raw/ac154d1f3d8b6399e8975ff5adcfa4a282bdd47f/tract_extents.json"
+  feature_key: "original"
+  property_key: "GEOID"
+  min_zoom_level: 5
+  max_zoom_level: 10
+}
