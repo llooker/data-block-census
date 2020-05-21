@@ -5,7 +5,7 @@ map_layer: congressional_districts {
   format: "vector_tile_region"
   extents_json_url: "https://gist.githubusercontent.com/noahamac/a852cf4934bf32cba1307b149a53d6a7/raw/6a363a6e086124fc0b63a4ed2524b2c508407c71/congress_extents.json"
   min_zoom_level: 0
-  max_zoom_level: 12
+  max_zoom_level: 14
   property_key: "GEOID"
   property_label_key: "NAMELSAD"
   feature_key: "original"
@@ -29,7 +29,7 @@ map_layer: places {
   extents_json_url: "https://gistcdn.githack.com/thomasbanghart/986ea1cb7ca563a4d56779205cae095c/raw/a20271f4f5b827f9200b64a60bd2d1ae1501ce7a/places_extents.json"
   property_key: "GEOID"
   min_zoom_level: 5
-  max_zoom_level: 10
+  max_zoom_level: 14
 }
 
 # Source: https://nces.ed.gov/programs/edge/Geographic/DistrictBoundaries
@@ -37,7 +37,7 @@ map_layer: school_districts {
   format: "vector_tile_region"
   url: "https://api.mapbox.com/v4/wilg-looker.2019schools/{z}/{x}/{y}.mvt?access_token=pk.eyJ1Ijoid2lsZy1sb29rZXIiLCJhIjoiY2thODlhOWZzMDJuaTJ5cWY5ajFqd2dmNyJ9.fLkuVq37jY-yQtj7PsYdsw"
   min_zoom_level: 0
-  max_zoom_level: 12
+  max_zoom_level: 14
   property_key: "GEOID"
   property_label_key: "NAME"
   feature_key: "original"
@@ -53,7 +53,7 @@ map_layer: cbsa_2018 {
   property_key: "GEOID"
   property_label_key: "NAME"
   min_zoom_level: 4
-  max_zoom_level: 11
+  max_zoom_level: 14
 }
 
 #Source: https://www.census.gov/geographies/reference-maps/2010/geo/2010-pumas.html
@@ -65,7 +65,7 @@ map_layer: puma_2010_census {
   property_key: "GEOID10"
   property_label_key: "NAMELSAD10"
   min_zoom_level: 4
-  max_zoom_level: 10
+  max_zoom_level: 14
 }
 
 #Source: BigQuery Geo data `bigquery-public-data.geo_census_tracts.census_tracts_*`
@@ -76,5 +76,5 @@ map_layer: census_tracts {
   feature_key: "original"
   property_key: "GEOID"
   min_zoom_level: 5
-  max_zoom_level: 10
+  max_zoom_level: 14
 }
