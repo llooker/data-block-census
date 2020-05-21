@@ -17,12 +17,12 @@ view: commute_core {
     hidden: yes
   }
 
-  dimension: commute_5_9_mins_dim {
-    type: number
-    sql: ${TABLE}.commute_5_9_mins ;;
-    description: "Number of workers with a commute between 5 and 9 minutes. The number of workers in a geographic area over the age of 16 who do not work from home and commute in between 5 and 9 minutes. "
-    hidden: yes
-  }
+#   dimension: commute_5_9_mins_dim {
+#     type: number
+#     sql: ${TABLE}.commute_5_9_mins ;;
+#     description: "Number of workers with a commute between 5 and 9 minutes. The number of workers in a geographic area over the age of 16 who do not work from home and commute in between 5 and 9 minutes. "
+#     hidden: yes
+#   } # Not present on all geo table types
 
   dimension: commute_10_14_mins_dim {
     type: number
@@ -73,12 +73,12 @@ view: commute_core {
     hidden: yes
   }
 
-  dimension: commute_60_89_mins_dim {
-    type: number
-    sql: ${TABLE}.commute_60_89_mins ;;
-    description: "Number of workers with a commute between 60 and 89 minutes. The number of workers in a geographic area over the age of 16 who do not work from home and commute in between 60 and 89 minutes."
-    hidden: yes
-  }
+#   dimension: commute_60_89_mins_dim {
+#     type: number
+#     sql: ${TABLE}.commute_60_89_mins ;;
+#     description: "Number of workers with a commute between 60 and 89 minutes. The number of workers in a geographic area over the age of 16 who do not work from home and commute in between 60 and 89 minutes."
+#     hidden: yes
+#   } # Not present on all geo table types
 
   dimension: commute_60_more_mins_dim {
     type: number
@@ -178,23 +178,23 @@ view: commute_core {
     description: "Number of workers with a commute between 45 and 59 minutes. The number of workers in a geographic area over the age of 16 who do not work from home and commute in between 45 and 59 minutes. "
   }
 
-  measure: commute_5_9_mins {
-    label: " 5-9 min"
-    type: sum
-    sql: ${commute_5_9_mins_dim} ;;
-    view_label: "Commute"
-    group_label: "Commute Time"
-    description: "Number of workers with a commute between 5 and 9 minutes. The number of workers in a geographic area over the age of 16 who do not work from home and commute in between 5 and 9 minutes."
-  }
+#   measure: commute_5_9_mins {
+#     label: " 5-9 min"
+#     type: sum
+#     sql: ${commute_5_9_mins_dim} ;;
+#     view_label: "Commute"
+#     group_label: "Commute Time"
+#     description: "Number of workers with a commute between 5 and 9 minutes. The number of workers in a geographic area over the age of 16 who do not work from home and commute in between 5 and 9 minutes."
+#   } # Not present on all geo table types
 
-  measure: commute_60_89_mins {
-    label: "60-89 min"
-    type: sum
-    sql: ${commute_60_89_mins_dim} ;;
-    view_label: "Commute"
-    group_label: "Commute Time"
-    description: "Number of workers with a commute between 60 and 89 minutes. The number of workers in a geographic area over the age of 16 who do not work from home and commute in between 60 and 89 minutes ."
-  }
+#   measure: commute_60_89_mins {
+#     label: "60-89 min"
+#     type: sum
+#     sql: ${commute_60_89_mins_dim} ;;
+#     view_label: "Commute"
+#     group_label: "Commute Time"
+#     description: "Number of workers with a commute between 60 and 89 minutes. The number of workers in a geographic area over the age of 16 who do not work from home and commute in between 60 and 89 minutes ."
+#   } # Not present on all geo table types
 
   measure: commute_60_more_mins {
     label: "60 min or more"
