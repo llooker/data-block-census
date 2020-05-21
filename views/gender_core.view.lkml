@@ -278,19 +278,19 @@ view: gender_core {
     hidden: yes
   }
 
-  dimension: male_60_61_dim {
-    type: number
-    sql: ${TABLE}.male_60_61 ;;
-    description: "Men age 60 to 61. The male population between the age of sixty years to sixty-one years within the specified area."
-    hidden: yes
-  }
+#   dimension: male_60_61_dim {
+#     type: number
+#     sql: ${TABLE}.male_60_61 ;;
+#     description: "Men age 60 to 61. The male population between the age of sixty years to sixty-one years within the specified area."
+#     hidden: yes
+#   } # Not present on all geo table types
 
-  dimension: male_62_64_dim {
-    type: number
-    sql: ${TABLE}.male_62_64 ;;
-    description: "Men age 62 to 64. The male population between the age of sixty-two years to sixty-four years within the specified area."
-    hidden: yes
-  }
+#   dimension: male_62_64_dim {
+#     type: number
+#     sql: ${TABLE}.male_62_64 ;;
+#     description: "Men age 62 to 64. The male population between the age of sixty-two years to sixty-four years within the specified area."
+#     hidden: yes
+#   } # Not present on all geo table types
 
   dimension: male_65_to_66_dim {
     type: number
@@ -690,23 +690,23 @@ view: gender_core {
     description: "Male age 5 to 9. The male population between the age of five years to nine years within the specified area."
   }
 
-  measure: male_60_61 {
-    label: "Age 60-61"
-    type: sum
-    sql: ${male_60_61_dim} ;;
-    view_label: "Gender"
-    group_label: "Male"
-    description: "Men age 60 to 61. The male population between the age of sixty years to sixty-one years within the specified area."
-  }
+#   measure: male_60_61 {
+#     label: "Age 60-61"
+#     type: sum
+#     sql: ${male_60_61_dim} ;;
+#     view_label: "Gender"
+#     group_label: "Male"
+#     description: "Men age 60 to 61. The male population between the age of sixty years to sixty-one years within the specified area."
+#   } # Not present on all geo table types
 
-  measure: male_62_64 {
-    label: "Age 62-64"
-    type: sum
-    sql: ${male_62_64_dim} ;;
-    view_label: "Gender"
-    group_label: "Male"
-    description: "Men age 62 to 64. The male population between the age of sixty-two years to sixty-four years within the specified area."
-  }
+#   measure: male_62_64 {
+#     label: "Age 62-64"
+#     type: sum
+#     sql: ${male_62_64_dim} ;;
+#     view_label: "Gender"
+#     group_label: "Male"
+#     description: "Men age 62 to 64. The male population between the age of sixty-two years to sixty-four years within the specified area."
+#   } # Not present on all geo table types
 
   measure: male_65_to_66 {
     label: "Age 65-66"
