@@ -50,7 +50,8 @@ map_layer: cbsa_2018 {
   extents_json_url: "https://gistcdn.githack.com/thomasbanghart/db2a0bd28ad445e745e038d1b40312ee/raw/d4826c5aef28ab67d9661e916535bd4df132e196/extents_cbsa.json"
   feature_key: "cbsa_2019-9h1x3k"
   property_key: "GEOID"
-  min_zoom_level: 0
+  property_label_key: "NAME"
+  min_zoom_level: 4
   max_zoom_level: 11
 }
 
@@ -61,7 +62,8 @@ map_layer: puma_2010_census {
   extents_json_url: "https://gistcdn.githack.com/thomasbanghart/3ef5c9a3ed3d52f8c726ee9bbc857118/raw/610e075f587d6602d028f8e74bf27817e27852ef/puma_extents.json"
   feature_key: "puma_2019-cgeycr"
   property_key: "GEOID10"
-  min_zoom_level: 0
+  property_label_key: "NAMELSAD10"
+  min_zoom_level: 4
   max_zoom_level: 10
 }
 

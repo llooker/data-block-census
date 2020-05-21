@@ -117,6 +117,7 @@ view: congressional_district_core {
     view_label: "Income Per Capita"
     group_label: "Congressional District"
     description: "Per Capita Income in the past 12 Months. Per capita income is the mean income computed for every man, woman, and child in a particular group. It is derived by dividing the total income of a particular group by the total population."
+    value_format_name: usd
   }
 
   measure: congressional_district_median_age {
