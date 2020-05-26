@@ -1,4 +1,4 @@
-project_name: "block_acs_census_bigquery"
+project_name: "data-block-acs-census-bigquery"
 
 ################# Constants #################
 
@@ -8,7 +8,7 @@ constant: CONNECTION_NAME {
 }
 
 constant: CONFIG_PROJECT_NAME {
-  value: "block_acs_census_bigquery_config"
+  value: "data-block-acs-census-bigquery-config"
   export: override_optional
 }
 

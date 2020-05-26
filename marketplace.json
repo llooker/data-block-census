@@ -17,7 +17,7 @@
   },
   "models": [
     {
-      "name": "acs_bigquery",
+      "name": "data_block_acs_bigquery",
       "connection_constant": "CONNECTION_NAME"
     }
   ],
