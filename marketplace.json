@@ -24,7 +24,7 @@
   "auxiliary_projects": [
     {
       "git_uri": "git://github.com/looker/block-acs-census-bigquery-config.git",
-      "git_ref": "6ecbf4f5afe7a29ac2e1262b2f5b5e40b50b7f48",
+      "git_ref": "390cb28cba63ed3b332bb1cb2dc193d75bbb3673",
       "label": "Config Project Name",
       "constant_name": "CONFIG_PROJECT_NAME"
     }
