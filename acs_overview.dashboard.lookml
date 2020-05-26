@@ -4,7 +4,7 @@
   elements:
   - title: Population by State
     name: Population by State
-    model: acs_bigquery
+    model: data_block_acs_bigquery
     explore: acs_census_data
     type: looker_map
     fields: [state.state_name, blockgroup.total_pop]
@@ -53,7 +53,7 @@
     height: 13
   - title: Total Population
     name: Total Population
-    model: acs_bigquery
+    model: data_block_acs_bigquery
     explore: acs_census_data
     type: single_value
     fields: [blockgroup.total_pop]
@@ -101,7 +101,7 @@
     height: 3
   - title: Gender
     name: Gender
-    model: acs_bigquery
+    model: data_block_acs_bigquery
     explore: acs_census_data
     type: looker_column
     fields: [blockgroup.female_pop, blockgroup.male_pop]
@@ -179,9 +179,9 @@
     col: 10
     width: 4
     height: 10
-  - title: Household Median Income and Per-Capita Income By State
-    name: Household Median Income and Per-Capita Income By State
-    model: acs_bigquery
+  - title: Household Median Income & Per-Capita Income by State
+    name: Household Median Income & Per-Capita Income by State
+    model: data_block_acs_bigquery
     explore: acs_census_data
     type: looker_column
     fields: [state.state_name, state.state_median_income, state.state_income_per_capita]
@@ -275,7 +275,7 @@
     height: 9
   - title: Median Rent by County
     name: Median Rent by County
-    model: acs_bigquery
+    model: data_block_acs_bigquery
     explore: acs_census_data
     type: looker_map
     fields: [county.county_fips, county.county_median_rent, county.county_name]
@@ -361,7 +361,7 @@
     height: 9
   - title: Race
     name: Race
-    model: acs_bigquery
+    model: data_block_acs_bigquery
     explore: acs_census_data
     type: looker_column
     fields: [blockgroup.white_pop, blockgroup.hispanic_pop, blockgroup.black_pop,
@@ -443,7 +443,7 @@
     height: 10
   - title: Education
     name: Education
-    model: acs_bigquery
+    model: data_block_acs_bigquery
     explore: acs_census_data
     type: looker_column
     fields: [blockgroup.masters_degree, blockgroup.bachelors_degree, blockgroup.associates_degree,
@@ -489,9 +489,9 @@
     col: 19
     width: 5
     height: 10
-  - title: Employed Vs Unemployed Population By State
-    name: Employed Vs Unemployed Population By State
-    model: acs_bigquery
+  - title: Employed Vs. Unemployed Population by State
+    name: Employed Vs. Unemployed Population by State
+    model: data_block_acs_bigquery
     explore: acs_census_data
     type: looker_column
     fields: [state.state_name, blockgroup.employed_pop, blockgroup.unemployed_pop]
@@ -534,13 +534,14 @@
       blockgroup.employed_pop: "#FFD95F"
       blockgroup.unemployed_pop: "#E57947"
     defaults_version: 1
+    listen: {}
     row: 31
     col: 12
     width: 12
     height: 9
-  - title: Commute Time Vs Median Income By County
-    name: Commute Time Vs Median Income By County
-    model: acs_bigquery
+  - title: Commute Time Vs. Median Income by County
+    name: Commute Time Vs. Median Income by County
+    model: data_block_acs_bigquery
     explore: acs_census_data
     type: looker_scatter
     fields: [county.county_name, county.county_median_income, blockgroup.aggregate_travel_time_to_work,
@@ -602,9 +603,9 @@
     col: 12
     width: 12
     height: 9
-  - title: Percent of Income Spent on Rent By State
-    name: Percent of Income Spent on Rent By State
-    model: acs_bigquery
+  - title: Percent of Income Spent on Rent by State
+    name: Percent of Income Spent on Rent by State
+    model: data_block_acs_bigquery
     explore: acs_census_data
     type: looker_column
     fields: [state.state_name, state.state_percent_income_spent_on_rent, state.state_median_income]
@@ -687,9 +688,9 @@
     col: 0
     width: 12
     height: 9
-  - title: Percent of Married Households By County
-    name: Percent of Married Households By County
-    model: acs_bigquery
+  - title: Percent of Married Households by County
+    name: Percent of Married Households by County
+    model: data_block_acs_bigquery
     explore: acs_census_data
     type: looker_map
     fields: [county.county_fips, county.county_name, blockgroup.married_households,
@@ -728,6 +729,108 @@
     hidden_fields: [blockgroup.married_households, blockgroup.households]
     listen: {}
     row: 31
+    col: 0
+    width: 12
+    height: 9
+  - title: Median Age by Congressional District
+    name: Median Age by Congressional District
+    model: data_block_acs_bigquery
+    explore: congressional_district
+    type: looker_map
+    fields: [congressional_district.congressional_district, congressional_district.congressional_district_median_age]
+    sorts: [congressional_district.congressional_district_median_age desc]
+    limit: 500
+    map_plot_mode: points
+    heatmap_gridlines: false
+    heatmap_gridlines_empty: false
+    heatmap_opacity: 0.5
+    show_region_field: true
+    draw_map_labels_above_data: true
+    map_tile_provider: light
+    map_position: custom
+    map_scale_indicator: 'off'
+    map_pannable: true
+    map_zoomable: true
+    map_marker_type: circle
+    map_marker_icon_name: default
+    map_marker_radius_mode: proportional_value
+    map_marker_units: meters
+    map_marker_proportional_scale_type: linear
+    map_marker_color_mode: fixed
+    show_view_names: false
+    show_legend: true
+    quantize_map_value_colors: false
+    reverse_map_value_colors: false
+    defaults_version: 1
+    series_types: {}
+    custom_color_enabled: true
+    show_single_value_title: true
+    show_comparison: false
+    comparison_type: value
+    comparison_reverse_colors: false
+    show_comparison_label: true
+    enable_conditional_formatting: false
+    conditional_formatting_include_totals: false
+    conditional_formatting_include_nulls: false
+    map: auto
+    map_projection: ''
+    quantize_colors: false
+    map_latitude: 38.71980474264239
+    map_longitude: -96.54785156250001
+    map_zoom: 4
+    listen: {}
+    row: 40
+    col: 12
+    width: 12
+    height: 9
+  - title: Population with Masters Degree by Congressional District
+    name: Population with Masters Degree by Congressional District
+    model: data_block_acs_bigquery
+    explore: congressional_district
+    type: looker_map
+    fields: [congressional_district.congressional_district, congressional_district.masters_degree]
+    sorts: [congressional_district.masters_degree desc]
+    limit: 500
+    map_plot_mode: points
+    heatmap_gridlines: false
+    heatmap_gridlines_empty: false
+    heatmap_opacity: 0.5
+    show_region_field: true
+    draw_map_labels_above_data: true
+    map_tile_provider: light
+    map_position: custom
+    map_scale_indicator: 'off'
+    map_pannable: true
+    map_zoomable: true
+    map_marker_type: circle
+    map_marker_icon_name: default
+    map_marker_radius_mode: proportional_value
+    map_marker_units: meters
+    map_marker_proportional_scale_type: linear
+    map_marker_color_mode: fixed
+    show_view_names: false
+    show_legend: true
+    quantize_map_value_colors: false
+    reverse_map_value_colors: false
+    map_latitude: 36.35329209802049
+    map_longitude: -100.07274627685548
+    map_zoom: 4
+    defaults_version: 1
+    series_types: {}
+    custom_color_enabled: true
+    show_single_value_title: true
+    show_comparison: false
+    comparison_type: value
+    comparison_reverse_colors: false
+    show_comparison_label: true
+    enable_conditional_formatting: false
+    conditional_formatting_include_totals: false
+    conditional_formatting_include_nulls: false
+    map: auto
+    map_projection: ''
+    quantize_colors: false
+    listen: {}
+    row: 40
     col: 0
     width: 12
     height: 9
