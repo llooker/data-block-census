@@ -4,7 +4,7 @@ project_name: "data-block-acs-census-bigquery"
 
 constant: CONNECTION_NAME {
   value: "bigquery-public"
-  export: override_optional
+  export: override_required
 }
 
 constant: CONFIG_PROJECT_NAME {
