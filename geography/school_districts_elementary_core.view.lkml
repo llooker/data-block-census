@@ -23,6 +23,7 @@ view: school_districts_elementary_core {
   sql_table_name: `bigquery-public-data.census_bureau_acs.schooldistrictelementary_2015_5yr` ;;
 
   dimension: school_districts_elementary {
+    label: "Schoo Districts - Elementary 📍"
     sql: ${TABLE}.geo_id ;;
     primary_key: yes
     map_layer_name: school_districts

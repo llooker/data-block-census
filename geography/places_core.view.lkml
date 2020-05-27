@@ -36,6 +36,7 @@ view: places_core {
   }
 
   dimension: place_id {
+    label: "Place ID 📍"
     sql: CAST(${TABLE}.place_id as STRING) ;;
     primary_key: yes
     view_label: "Geography"

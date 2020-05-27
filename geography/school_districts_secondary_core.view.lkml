@@ -23,6 +23,7 @@ view: school_districts_secondary_core {
   sql_table_name: `bigquery-public-data.census_bureau_acs.schooldistrictsecondary_2015_5yr` ;;
 
   dimension: school_districts_secondary {
+    label: "School Districts - Secondary 📍"
     sql: ${TABLE}.geo_id ;;
     primary_key: yes
     view_label: "Geography"

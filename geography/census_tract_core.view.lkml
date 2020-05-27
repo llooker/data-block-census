@@ -11,6 +11,7 @@ view: census_tract_core {
   sql_table_name: `bigquery-public-data.census_bureau_acs.censustract_2018_5yr` ;;
 
   dimension: census_tract {
+    label: "Census Tract 📍"
     primary_key: yes
     sql: ${TABLE}.geo_id ;;
     view_label: "Geography"

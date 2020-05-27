@@ -33,7 +33,7 @@ view: cbsa_core {
   }
 
   dimension: cbsa {
-    label: "Core-based Statistical Area"
+    label: "Core-based Statistical Area 📍"
     view_label: "Geography"
     group_label: "CBSA"
     primary_key: yes

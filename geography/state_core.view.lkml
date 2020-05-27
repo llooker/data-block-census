@@ -21,6 +21,7 @@ view: state_core {
   }
 
   dimension: state_name {
+    label: "State 📍"
     primary_key: yes
     sql: ${TABLE}.state ;;
     view_label: "Geography"

@@ -24,6 +24,7 @@ view: county_core {
   }
 
   dimension: county_fips {
+    label: "County FIPS 📍"
     primary_key: yes
     sql: ${TABLE}.county_fips ;;
     view_label: "Geography"

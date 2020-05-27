@@ -22,6 +22,7 @@ view: congressional_district_core {
   sql_table_name: `bigquery-public-data.census_bureau_acs.congressionaldistrict_2018_5yr` ;;
 
   dimension: congressional_district {
+    label: "Congressional District 📍"
     primary_key: yes
     sql: ${TABLE}.geo_id ;;
     view_label: "Geography"

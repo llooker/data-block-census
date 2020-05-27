@@ -24,7 +24,7 @@ view: puma_core {
   sql_table_name: `bigquery-public-data.census_bureau_acs.puma_2018_5yr` ;;
 
   dimension: puma {
-    label: "Public Use Microdata Areas"
+    label: "Public Use Microdata Areas 📍"
     sql: ${TABLE}.geo_id ;;
     primary_key: yes
     view_label: "Geography"

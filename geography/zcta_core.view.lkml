@@ -34,7 +34,8 @@ view: zcta_core {
     persist_for: "100000 hours"
   }
 
-  dimension: zcat {
+  dimension: zcta {
+    label: "ZCTA 📍"
     primary_key: yes
     sql: ${TABLE}.geo_id ;;
     view_label: "Geography"

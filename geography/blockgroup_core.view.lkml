@@ -24,6 +24,7 @@ view: blockgroup_core {
   sql_table_name: `bigquery-public-data.census_bureau_acs.blockgroup_2018_5yr` ;;
 
   dimension: block_group {
+    label: "Block Group 📍"
     primary_key: yes
     view_label: "Geography"
     sql: ${TABLE}.geo_id ;;

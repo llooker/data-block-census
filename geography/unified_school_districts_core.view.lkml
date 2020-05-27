@@ -23,6 +23,7 @@ view: school_districts_unified_core {
   sql_table_name: `bigquery-public-data.census_bureau_acs.schooldistrictunified_2015_5yr` ;;
 
   dimension: unified_school_districts {
+    label: "School Districts - Unified 📍"
     primary_key: yes
     sql: ${TABLE}.geo_id ;;
     view_label: "Geography"
