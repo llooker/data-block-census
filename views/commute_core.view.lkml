@@ -230,10 +230,3 @@ view: commute_core {
     description: "Commuters by Public Transportation. The number of workers age 16 years and over within a geographic area who primarily traveled to work by public transportation.  This is the principal mode of travel or type of conveyance, by distance rather than time, that the worker usually used to get from home to work."
   }
 }
-
-view: derived {
-  derived_table: {
-    sql: SELECT 1 as "one" FROM @{CONFIG_PROJECT_NAME} ;;
-  }
-  dimension: one {}
-}
