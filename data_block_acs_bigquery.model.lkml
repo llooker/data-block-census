@@ -9,6 +9,8 @@ include: "//@{CONFIG_PROJECT_NAME}/geography/*.view.lkml"
 include: "//@{CONFIG_PROJECT_NAME}/*.model.lkml"
 include: "//@{CONFIG_PROJECT_NAME}/*.dashboard"
 
+explore: derived {}
+
 explore: acs_census_data {
   extends: [acs_census_data_config]
 }
@@ -44,3 +46,5 @@ explore: places {
 explore: cbsa {
   extends: [cbsa_config]
 }
+
+label: "Census Data Block"

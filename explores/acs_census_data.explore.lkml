@@ -2,7 +2,7 @@ explore: acs_census_data_core {
   extension: required
   persist_for: "10000 hours"
   view_name: state
-  label: "ACS Census Data"
+  label: "State and County"
 
   join: county {
     sql_on: ${state.key} = ${county.state_key} ;;
