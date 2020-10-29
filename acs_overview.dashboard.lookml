@@ -1,5 +1,5 @@
 - dashboard: acs_census_overview
-  title: ACS Census Overview
+  title: Census Overview
   layout: newspaper
   elements:
   - title: Population by State
