@@ -1,6 +1,7 @@
 - dashboard: acs_census_overview
   title: Census Overview
   layout: newspaper
+  preferred_viewer: dashboards-next
   elements:
   - title: Population by State
     name: Population by State
