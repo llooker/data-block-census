@@ -1,15 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/views/housing.view.lkml"
-
-
 view: housing {
-  extends: [housing_config]
-}
-
-###################################################
-
-view: housing_core {
-  extension: required
-
   dimension: occupied_housing_units_dim {
     type: number
     sql: ${TABLE}.occupied_housing_units ;;

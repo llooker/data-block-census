@@ -1,13 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/geography/census_tract.view.lkml"
-
-
 view: census_tract {
-  extends: [census_tract_config]
-}
-
-###################################################
-
-view: census_tract_core {
   sql_table_name: `bigquery-public-data.census_bureau_acs.censustract_2018_5yr` ;;
 
   dimension: census_tract {

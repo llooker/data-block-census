@@ -1,13 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/geography/state.view.lkml"
-
-
 view: state {
-  extends: [state_config]
-}
-
-###################################################
-
-view: state_core {
   derived_table: {
     sql: SELECT
       state.*,

@@ -1,5 +1,7 @@
-explore: acs_census_data_core {
-  extension: required
+include: "/views/*"
+include: "/geography/*"
+
+explore: acs_census_data {
   persist_for: "10000 hours"
   view_name: state
   label: " State and County"

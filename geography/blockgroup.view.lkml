@@ -1,16 +1,8 @@
-include: "//@{CONFIG_PROJECT_NAME}/geography/blockgroup.view.lkml"
-
-
-view: blockgroup {
-  extends: [blockgroup_config]
-}
-
-###################################################
-
 include: "/views/*"
 include: "/maps/*"
 
-view: blockgroup_core {
+
+view: blockgroup {
   extends: [
     gender,
     housing,

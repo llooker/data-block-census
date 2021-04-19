@@ -1,5 +1,7 @@
-explore: cbsa_core {
-  extension: required
+include: "/views/*"
+include: "/geography/*"
+
+explore: cbsa {
   persist_for: "10000 hours"
   label: "Core-based Statistical Areas"
 
@@ -7,5 +9,4 @@ explore: cbsa_core {
     sql_on: ${cbsa.state_abbreviation} = ${state.state_abbreviation} ;;
     relationship: many_to_one
   }
-
 }

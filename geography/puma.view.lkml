@@ -1,16 +1,8 @@
-include: "//@{CONFIG_PROJECT_NAME}/geography/puma.view.lkml"
-
-
-view: puma {
-  extends: [puma_config]
-}
-
-###################################################
-
 include: "/views/*"
 include: "/maps/*"
 
-view: puma_core {
+
+view: puma {
   extends: [
     commute,
     education,

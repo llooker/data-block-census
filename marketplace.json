@@ -7,9 +7,6 @@
   },
 
   "constants": {
-    "CONFIG_PROJECT_NAME": {
-      "label": "Config Project Name"
-    },
     "CONNECTION_NAME": {
       "label": "Connection Name",
       "value_constraint": "connection"
@@ -19,14 +16,6 @@
     {
       "name": "data_block_acs_bigquery",
       "connection_constant": "CONNECTION_NAME"
-    }
-  ],
-  "auxiliary_projects": [
-    {
-      "git_uri": "git://github.com/looker/block-acs-census-bigquery-config.git",
-      "git_ref": "97d88c5aebcc95670d07260022350eac8c2fd43b",
-      "label": "Census Data Block Config",
-      "constant_name": "CONFIG_PROJECT_NAME"
     }
   ]
 }

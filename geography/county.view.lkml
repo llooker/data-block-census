@@ -1,15 +1,6 @@
-include: "//@{CONFIG_PROJECT_NAME}/geography/county.view.lkml"
-
-
-view: county {
-  extends: [county_config]
-}
-
-###################################################
-
 include: "/views/*"
 
-view: county_core {
+view: county {
   derived_table: {
     sql: SELECT
       county.*,

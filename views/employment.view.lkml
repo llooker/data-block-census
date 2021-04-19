@@ -1,15 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/views/employment.view.lkml"
-
-
 view: employment {
-  extends: [employment_config]
-}
-
-###################################################
-
-view: employment_core {
-  extension: required
-
   dimension: median_income_dim {
     type: number
     sql: ${TABLE}.median_income ;;

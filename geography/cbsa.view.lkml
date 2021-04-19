@@ -1,16 +1,8 @@
-include: "//@{CONFIG_PROJECT_NAME}/geography/cbsa.view.lkml"
-
-
-view: cbsa {
-  extends: [cbsa_config]
-}
-
-###################################################
-
 include: "/views/*"
 include: "/maps/*"
 
-view: cbsa_core {
+
+view: cbsa {
   extends: [
     commute,
     education,

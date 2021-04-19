@@ -1,15 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/views/family.view.lkml"
-
-
 view: family {
-  extends: [family_config]
-}
-
-###################################################
-
-view: family_core {
-  extension: required
-
   dimension: two_parent_families_with_young_children_dim {
     type: number
     sql: ${TABLE}.two_parent_families_with_young_children ;;

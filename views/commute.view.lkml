@@ -1,15 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/views/commute.view.lkml"
-
-
 view: commute {
-  extends: [commute_config]
-}
-
-###################################################
-
-view: commute_core {
-  extension: required
-
   dimension: aggregate_travel_time_to_work_dim {
     type: number
     sql: ${TABLE}.aggregate_travel_time_to_work ;;
