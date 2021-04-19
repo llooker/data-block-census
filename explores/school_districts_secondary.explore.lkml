@@ -1,5 +1,7 @@
-explore: school_districts_secondary_core {
-  extension: required
+include: "/views/*"
+include: "/geography/*"
+
+explore: school_districts_secondary {
   persist_for: "10000 hours"
   label: "Secondary School Districts"
 

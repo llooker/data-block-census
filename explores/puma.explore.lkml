@@ -1,5 +1,7 @@
-explore: puma_core {
-  extension: required
+include: "/views/*"
+include: "/geography/*"
+
+explore: puma{
   persist_for: "10000 hours"
   label: "Public Use Microdata Areas"
 

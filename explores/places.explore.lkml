@@ -1,5 +1,7 @@
-explore: places_core {
-  extension: required
+include: "/views/*"
+include: "/geography/*"
+
+explore: places {
   persist_for: "10000 hours"
   label: "Places"
 

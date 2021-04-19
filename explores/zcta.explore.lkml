@@ -1,5 +1,7 @@
-explore: zcta_core {
-  extension: required
+include: "/views/*"
+include: "/geography/*"
+
+explore: zcta {
   persist_for: "10000 hours"
   label: "Zip Codes"
 

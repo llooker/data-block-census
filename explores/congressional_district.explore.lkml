@@ -1,5 +1,7 @@
-explore: congressional_district_core {
-  extension: required
+include: "/views/*"
+include: "/geography/*"
+
+explore: congressional_district {
   persist_for: "10000 hours"
   label: "Congressional Districts"
 

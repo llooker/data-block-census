@@ -1,5 +1,7 @@
-explore: school_districts_unified_core {
-  extension: required
+include: "/views/*"
+include: "/geography/*"
+
+explore: school_districts_unified {
   persist_for: "10000 hours"
   label: "Unified School Districts"
 

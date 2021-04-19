@@ -1,15 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/views/race.view.lkml"
-
-
 view: race {
-  extends: [race_config]
-}
-
-###################################################
-
-view: race_core {
-  extension: required
-
   dimension: amerindian_pop_dim {
     type: number
     sql: ${TABLE}.amerindian_pop ;;

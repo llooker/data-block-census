@@ -1,5 +1,7 @@
-explore: school_districts_elementary_core {
-  extension: required
+include: "/views/*"
+include: "/geography/*"
+
+explore: school_districts_elementary{
   persist_for: "10000 hours"
   label: "Elementary School Districts"
 
