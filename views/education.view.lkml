@@ -28,6 +28,7 @@ view: education {
     hidden: yes
   }
   # A COMMIT I DONT WANT
+  # THIS IS THE ONLY COMMIT I WANT 
   dimension: associates_degree_dim {
     type: number
     sql: ${TABLE}.associates_degree ;;
