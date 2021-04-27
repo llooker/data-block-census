@@ -27,7 +27,7 @@ view: education {
     description: "Population Completed High School. The number of people in a geographic area over the age of 25 who completed high school, and did not complete a more advanced degree."
     hidden: yes
   }
-
+  # A COMMIT I DONT WANT
   dimension: associates_degree_dim {
     type: number
     sql: ${TABLE}.associates_degree ;;
