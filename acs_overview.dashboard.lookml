@@ -47,7 +47,9 @@
     map_latitude: 43.53038025877379
     map_longitude: -101.78489685058595
     map_zoom: 4
-    listen: {}
+    listen:
+      State 📍: state.state_name
+      County Name: county.county_name
     row: 0
     col: 0
     width: 10
@@ -96,6 +98,9 @@
     map_latitude: 38.853077122482176
     map_longitude: -55.33264160156251
     map_zoom: 3
+    listen:
+      State 📍: state.state_name
+      County Name: county.county_name
     row: 0
     col: 10
     width: 14
@@ -175,7 +180,9 @@
     map_latitude: 38.853077122482176
     map_longitude: -55.33264160156251
     map_zoom: 3
-    listen: {}
+    listen:
+      State 📍: state.state_name
+      County Name: county.county_name
     row: 3
     col: 10
     width: 4
@@ -269,7 +276,9 @@
     map_longitude: -55.33264160156251
     map_zoom: 3
     hidden_fields:
-    listen: {}
+    listen:
+      State 📍: state.state_name
+      County Name: county.county_name
     row: 22
     col: 0
     width: 12
@@ -355,7 +364,9 @@
     map_latitude: 37.69550269227836
     map_longitude: -89.93408203125
     map_zoom: 4
-    listen: {}
+    listen:
+      State 📍: state.state_name
+      County Name: county.county_name
     row: 13
     col: 12
     width: 12
@@ -437,7 +448,9 @@
     map_latitude: 38.853077122482176
     map_longitude: -55.33264160156251
     map_zoom: 3
-    listen: {}
+    listen:
+      State 📍: state.state_name
+      County Name: county.county_name
     row: 3
     col: 14
     width: 5
@@ -485,7 +498,9 @@
         steps: 5
     series_colors: {}
     defaults_version: 1
-    listen: {}
+    listen:
+      State 📍: state.state_name
+      County Name: county.county_name
     row: 3
     col: 19
     width: 5
@@ -535,7 +550,9 @@
       blockgroup.employed_pop: "#FFD95F"
       blockgroup.unemployed_pop: "#E57947"
     defaults_version: 1
-    listen: {}
+    listen:
+      State 📍: state.state_name
+      County Name: county.county_name
     row: 31
     col: 12
     width: 12
@@ -599,7 +616,9 @@
     defaults_version: 1
     hidden_fields: [county.county_name, blockgroup.aggregate_travel_time_to_work,
       blockgroup.employed_pop]
-    listen: {}
+    listen:
+      State 📍: state.state_name
+      County Name: county.county_name
     row: 22
     col: 12
     width: 12
@@ -684,7 +703,9 @@
     map_latitude: 37.752529660262965
     map_longitude: -91.78253173828125
     map_zoom: 4
-    listen: {}
+    listen:
+      State 📍: state.state_name
+      County Name: county.county_name
     row: 13
     col: 0
     width: 12
@@ -728,7 +749,9 @@
     map_longitude: -100.34225463867189
     map_zoom: 4
     hidden_fields: [blockgroup.married_households, blockgroup.households]
-    listen: {}
+    listen:
+      State 📍: state.state_name
+      County Name: county.county_name
     row: 31
     col: 0
     width: 12
@@ -779,7 +802,8 @@
     map_latitude: 38.71980474264239
     map_longitude: -96.54785156250001
     map_zoom: 4
-    listen: {}
+    listen:
+      State 📍: state.state_name
     row: 40
     col: 12
     width: 12
@@ -830,8 +854,39 @@
     map: auto
     map_projection: ''
     quantize_colors: false
-    listen: {}
+    listen:
+      State 📍: state.state_name
     row: 40
     col: 0
     width: 12
     height: 9
+  filters:
+  - name: State 📍
+    title: State 📍
+    type: field_filter
+    default_value: ''
+    allow_multiple_values: true
+    required: false
+    ui_config:
+      type: checkboxes
+      display: popover
+      options: []
+    model: data_block_acs_bigquery
+    explore: acs_census_data
+    listens_to_filters: [County Name]
+    field: state.state_name
+  - name: County Name
+    title: County Name
+    type: field_filter
+    default_value: ''
+    allow_multiple_values: true
+    required: false
+    ui_config:
+      type: checkboxes
+      display: popover
+      options: []
+    model: data_block_acs_bigquery
+    explore: acs_census_data
+    listens_to_filters: [State 📍]
+    field: county.county_name
+
