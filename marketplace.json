@@ -1,5 +1,5 @@
 {
-  "label": "Census Data Block",
+  "label": "ASC Demographic Data",
   "category_label": "Models",
   "branding": {
     "image_uri": "https://marketplace-api.looker.com/block-icons/acs_census_icon.png",
