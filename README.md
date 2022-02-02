@@ -43,7 +43,7 @@ explore: orders {
 We’ll first want to include all the geographic layers from this Data Block by adding this `include` header to our model file after setting up the [project’s manifest for project import](https://docs.looker.com/data-modeling/learning-lookml/importing-projects#create_a_project_manifest_file):
 
 ```
-include: "//marketplace_block_acs_census_bigquery/geography/*"
+include: "//marketplace_block_acs_census_bigquery/geography/*.lkml"
 ```
 We now have a few options for integrating this Data Block with our own project:
 
@@ -51,7 +51,7 @@ We now have a few options for integrating this Data Block with our own project:
   We can easily incorporate content from this Data Block by extending a premade explore, provided we have the proper fields to join on. Below shows how this would look if we included Zip Code Tabulation Area (ZCTA) data in our original `orders` explore:
 
 ```
-include: "//marketplace_block_acs_census_bigquery/geography/*"
+include: "//marketplace_block_acs_census_bigquery/geography/*.lkml"
 
 explore: orders {
   extends: [zcta]
@@ -72,10 +72,10 @@ Here we extend the premade `zcta` explore into `orders` and join them using `zct
   We can also import geography views individually. In most cases, importing individual geographies requires no additional view declarations --  simply import the view and join it to an explore much like the above example. However, If using `state`, `county` or `census_tract` geographies we’ll need to create an additional view to populate the imported layer with fields. Let’s take a look on how we’d import just the `state` view into our project:
 
 ```
-include: "//marketplace_block_acs_census_bigquery/geography/*"
+include: "//marketplace_block_acs_census_bigquery/geography/*.lkml"
 
 # We’ll need an additional include statement to bring in the view files
-include: “//marketplace_block_acs_census_bigquery/views/*”
+include: “//marketplace_block_acs_census_bigquery/views/*.lkml”
 
 #Here’s the additional view to populate the state geography layer with fields
 view: state_extended {
@@ -98,7 +98,7 @@ explore: orders {
 Again, the need for the additional view is only required for importing the `state`, `county` or `census_tract` geographies alone. For importing other views, we’ll simply join the view to our explore. For example, were we to include just the `places` view:
 
 ```
-include: "//marketplace_block_acs_census_bigquery/geography/*"
+include: "//marketplace_block_acs_census_bigquery/geography/*.lkml"
 
 explore: orders {
   join: address {
